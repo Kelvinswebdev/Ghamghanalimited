@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GHAM Ghana Ltd</title>
+  <meta name="description" content="GHAM Ghana Ltd — consumer goods and brand building.">
+  <meta name="theme-color" content="#FBFAF7">
+  <link rel="icon" href="data:,">
+
+  <!-- Flag JS early so the mobile menu never flashes open before main.js loads -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============ Global header ============ -->
+  <header class="site-header" data-header>
+    <div class="header-inner">
+
+      <a class="brand" href="index.html" aria-label="GHAM Ghana Ltd, home">
+        <!-- alt stays empty — the link's aria-label already names it -->
+        <img class="brand__logo" src="assets/logos/gham-logo-horizontal.png" alt="" width="411" height="128">
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+        <span class="menu-toggle__label" data-menu-label>Menu</span>
+        <span class="menu-toggle__icon" aria-hidden="true"><span></span><span></span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main" data-nav>
+        <ul class="nav-primary" role="list">
+          <li><a class="nav-link" href="about.html"><span class="nav-index" aria-hidden="true">01</span><span class="nav-text">About Us</span></a></li>
+          <li><a class="nav-link" href="brands.html"><span class="nav-index" aria-hidden="true">02</span><span class="nav-text">Our Brands</span></a></li>
+          <li><a class="nav-link" href="business.html"><span class="nav-index" aria-hidden="true">03</span><span class="nav-text">Our Business</span></a></li>
+          <li><a class="nav-link" href="products.html"><span class="nav-index" aria-hidden="true">04</span><span class="nav-text">Our Products</span></a></li>
+          <li><a class="nav-link" href="quality-safety.html"><span class="nav-index" aria-hidden="true">05</span><span class="nav-text">Quality &amp; Safety</span></a></li>
+          <li><a class="nav-link" href="sustainability.html"><span class="nav-index" aria-hidden="true">06</span><span class="nav-text">Sustainability</span></a></li>
+          <li><a class="nav-link" href="news.html"><span class="nav-index" aria-hidden="true">07</span><span class="nav-text">News &amp; Insights</span></a></li>
+        </ul>
+        <ul class="nav-secondary" role="list">
+          <li><a class="nav-utility" href="careers.html">Careers</a></li>
+          <li><a class="nav-utility" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ============ Hero carousel ============
+      HOW TO REPLACE MEDIA (per slide, inside .hero-slide__media):
+        • Desktop image  → <img> src / srcset   (16:9, export 1600w + 2400w)
+        • Mobile image   → <source media=...>   (8:9 portrait crop, export 800w + 1200w)
+        • Alt text       → <img alt="...">       (describe the photo; "" only if purely decorative)
+        • Focal point    → style="--focus: 60% 40%" on .hero-slide__media (object-position)
+        • Optional video → data-video="assets/videos/hero-01.mp4" on .hero-slide__media
+                           (muted loop; the image stays as poster + fallback, and is used
+                            for reduced-motion / data-saver visitors)
+      Slide 1 loads eagerly (it's the LCP image). Slides 2–4 use data-src / data-srcset
+      and are loaded by JS just before they're needed — keep that pattern when swapping.
+    -->
+    <section class="hero" aria-roledescription="carousel" aria-label="GHAM highlights" data-hero>
+      <h1 class="visually-hidden">GHAM Ghana Ltd — consumer goods and brand building</h1>
+
+      <div class="hero-slides" id="hero-slides" aria-live="off" data-hero-slides>
+
+        <!-- 01 — GHAM -->
+        <article class="hero-slide is-active" id="hero-slide-1" role="group" aria-roledescription="slide" aria-label="1 of 4: GHAM" data-hero-slide>
+          <div class="hero-slide__media">
+            <picture>
+              <source media="(max-width: 47.99em)" sizes="100vw"
+                      srcset="assets/images/hero/tea-plantation-mobile-800.webp 800w">
+              <img src="assets/images/hero/tea-plantation-desktop-1600.webp"
+                   srcset="assets/images/hero/tea-plantation-desktop-1600.webp 1600w"
+                   sizes="100vw" width="1600" height="900" fetchpriority="high" decoding="async"
+                   alt="Workers harvesting tea among rows of terraced tea bushes on a hillside">
+            </picture>
+          </div>
+          <div class="hero-slide__body">
+            <div class="hero-slide__content" data-hero-hover>
+              <p class="hero-eyebrow"><span class="hero-eyebrow__num">01</span>GHAM Ghana Ltd</p>
+              <h2 class="hero-title">
+                <span class="hero-title__line"><span>Building Brands.</span></span>
+                <span class="hero-title__line"><span>Creating Value.</span></span>
+              </h2>
+              <p class="hero-copy">GHAM is a consumer-goods and brand-building company. We develop, produce and grow brands built on quality, trust and lasting value.</p>
+              <a class="hero-cta" href="about.html">Discover GHAM<svg class="hero-cta__arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 02 — Our Brands -->
+        <article class="hero-slide" id="hero-slide-2" role="group" aria-roledescription="slide" aria-label="2 of 4: Our Brands" data-hero-slide>
+          <div class="hero-slide__media">
+            <picture>
+              <source media="(max-width: 47.99em)" sizes="100vw"
+                      data-srcset="assets/images/hero/slide-02-mobile-800.webp 800w, assets/images/hero/slide-02-mobile-1200.webp 1200w">
+              <img data-src="assets/images/hero/slide-02-desktop-1600.webp"
+                   data-srcset="assets/images/hero/slide-02-desktop-1600.webp 1600w, assets/images/hero/slide-02-desktop-2400.webp 2400w"
+                   sizes="100vw" width="1600" height="900" decoding="async"
+                   alt="Placeholder image: Amandah and GHAM brand products">
+            </picture>
+          </div>
+          <div class="hero-slide__body">
+            <div class="hero-slide__content" data-hero-hover>
+              <p class="hero-eyebrow"><span class="hero-eyebrow__num">02</span>Our Brands</p>
+              <h2 class="hero-title">
+                <span class="hero-title__line"><span>Brands Made for</span></span>
+                <span class="hero-title__line"><span>Everyday Life.</span></span>
+              </h2>
+              <p class="hero-copy">A growing portfolio of consumer brands, led by Amandah, made with care for the moments that matter every day.</p>
+              <a class="hero-cta" href="brands.html">Explore Our Brands<svg class="hero-cta__arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 03 — Our Business -->
+        <article class="hero-slide" id="hero-slide-3" role="group" aria-roledescription="slide" aria-label="3 of 4: Our Business" data-hero-slide>
+          <div class="hero-slide__media">
+            <picture>
+              <source media="(max-width: 47.99em)" sizes="100vw"
+                      data-srcset="assets/images/hero/dairy-milking-mobile-800.webp 800w">
+              <img data-src="assets/images/hero/dairy-milking-desktop-1600.webp"
+                   data-srcset="assets/images/hero/dairy-milking-desktop-1600.webp 1600w"
+                   sizes="100vw" width="1600" height="900" decoding="async"
+                   alt="Hands milking a cow by hand into an enamel jug">
+            </picture>
+          </div>
+          <div class="hero-slide__body">
+            <div class="hero-slide__content" data-hero-hover>
+              <p class="hero-eyebrow"><span class="hero-eyebrow__num">03</span>Our Business</p>
+              <h2 class="hero-title">
+                <span class="hero-title__line"><span>From Product Idea</span></span>
+                <span class="hero-title__line"><span>to Market.</span></span>
+              </h2>
+              <p class="hero-copy">Brand and product development, operations, distribution and market expansion: we manage every step that takes a product from idea to shelf.</p>
+              <a class="hero-cta" href="business.html">Our Business<svg class="hero-cta__arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 04 — Growth & Purpose -->
+        <article class="hero-slide" id="hero-slide-4" role="group" aria-roledescription="slide" aria-label="4 of 4: Growth and Purpose" data-hero-slide>
+          <div class="hero-slide__media">
+            <picture>
+              <source media="(max-width: 47.99em)" sizes="100vw"
+                      data-srcset="assets/images/hero/highland-cattle-mobile-800.webp 800w">
+              <img data-src="assets/images/hero/highland-cattle-desktop-1600.webp"
+                   data-srcset="assets/images/hero/highland-cattle-desktop-1600.webp 1600w"
+                   sizes="100vw" width="1600" height="900" decoding="async"
+                   alt="Two Highland cattle walking across a misty farm pasture">
+            </picture>
+          </div>
+          <div class="hero-slide__body">
+            <div class="hero-slide__content" data-hero-hover>
+              <p class="hero-eyebrow"><span class="hero-eyebrow__num">04</span>Growth &amp; Purpose</p>
+              <h2 class="hero-title">
+                <span class="hero-title__line"><span>Growing with</span></span>
+                <span class="hero-title__line"><span>Purpose.</span></span>
+              </h2>
+              <p class="hero-copy">Responsible growth, uncompromising quality and investment in our people and partners, building value that lasts.</p>
+              <a class="hero-cta" href="sustainability.html">Our Approach<svg class="hero-cta__arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Controls (hidden without JS — slide 1 then stands alone) -->
+      <div class="hero-controls" data-hero-controls data-hero-hover>
+        <div class="hero-controls__inner">
+          <div class="hero-progress">
+            <span class="hero-count" aria-hidden="true"><span class="hero-count__current" data-hero-count>01</span></span>
+            <ol class="hero-progress__track" role="list">
+              <li><button class="hero-progress__seg" type="button" aria-label="Go to slide 1: GHAM" aria-controls="hero-slide-1" data-hero-goto="0"><span class="hero-progress__fill"></span></button></li>
+              <li><button class="hero-progress__seg" type="button" aria-label="Go to slide 2: Our Brands" aria-controls="hero-slide-2" data-hero-goto="1"><span class="hero-progress__fill"></span></button></li>
+              <li><button class="hero-progress__seg" type="button" aria-label="Go to slide 3: Our Business" aria-controls="hero-slide-3" data-hero-goto="2"><span class="hero-progress__fill"></span></button></li>
+              <li><button class="hero-progress__seg" type="button" aria-label="Go to slide 4: Growth and Purpose" aria-controls="hero-slide-4" data-hero-goto="3"><span class="hero-progress__fill"></span></button></li>
+            </ol>
+            <span class="hero-count hero-count--total" aria-hidden="true">04</span>
+          </div>
+
+          <div class="hero-buttons">
+            <button class="hero-btn" type="button" aria-label="Pause slideshow" data-hero-toggle>
+              <svg class="hero-btn__pause" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10M13 5v10"/></svg>
+              <svg class="hero-btn__play" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4.5v11l8.5-5.5z"/></svg>
+            </button>
+            <button class="hero-btn" type="button" aria-label="Previous slide" aria-controls="hero-slides" data-hero-prev>
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M17 10H4M9 5l-5 5 5 5"/></svg>
+            </button>
+            <button class="hero-btn" type="button" aria-label="Next slide" aria-controls="hero-slides" data-hero-next>
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
