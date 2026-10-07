@@ -1,7 +1,11 @@
 /* =========================================
    GHAM HERO CAROUSEL
 ========================================= */
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .hero-carousel {
     --hero-navy: #172b4d;
     --hero-gold: #c9a45c;

@@ -452,7 +452,7 @@ html.menu-open { overflow: hidden; }
    ========================================================================== */
 
 .hero {
-  --hero-interval: 8000ms;   /* time each slide is shown; the fill animation drives autoplay */
+  --hero-interval: 3000ms;   /* time each slide is shown; the fill animation drives autoplay */
   --hero-wipe: 950ms;        /* image curtain */
   --hero-text: 380ms;        /* when incoming text starts, relative to the curtain */
   --hero-controls-h: 5.5rem;
