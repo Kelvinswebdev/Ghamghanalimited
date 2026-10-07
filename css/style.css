@@ -14,7 +14,7 @@
   --color-accent: #8C6A2B;
 
   /* Brand — sampled from the official GHAM logo */
-  --color-navy: #2C2E56;
+  --color-navy: #141415;
   --color-navy-deep: #1C1D3A;
   --color-gold: #CAA562;
 
@@ -934,4 +934,653 @@ html:not(.js) .hero-controls { display: none; }
   .js .site-nav.is-open li { transform: none; }
 
   .js .site-nav.is-open li { transition: opacity 200ms ease; transition-delay: 0ms; }
+}
+
+
+/* =========================================================
+   GHAM — WHO WE ARE
+========================================================= */
+
+.gham-who {
+  position: relative;
+  overflow: hidden;
+
+  background: var(--color-paper);
+  color: var(--color-ink);
+
+  padding: clamp(6rem, 10vw, 10rem) 0;
+}
+
+.gham-who__inner {
+  width: min(
+    calc(100% - (var(--gutter) * 2)),
+    var(--container)
+  );
+
+  margin-inline: auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+
+  gap: clamp(4rem, 8vw, 9rem);
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   VISUAL SIDE
+========================================================= */
+
+.gham-who__visual {
+  position: relative;
+
+  min-height: clamp(31rem, 48vw, 43rem);
+
+  display: grid;
+
+  grid-template-columns: 1.55fr 0.72fr;
+  grid-template-rows: 1fr 0.42fr;
+
+  gap: 1rem;
+}
+
+
+/* Main image */
+
+.gham-who__image {
+  position: relative;
+  overflow: hidden;
+
+  background: #e8e5dd;
+}
+
+.gham-who__image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 1.4s var(--ease-out);
+}
+
+
+/* Main */
+
+.gham-who__image--main {
+  grid-column: 1;
+  grid-row: 1 / 3;
+
+  min-height: 31rem;
+
+  border-radius: 0.35rem;
+}
+
+
+/* Small image */
+
+.gham-who__image--small {
+  grid-column: 2;
+  grid-row: 2;
+
+  min-height: 12rem;
+
+  border-radius: 0.35rem;
+}
+
+
+/* Image hover */
+
+.gham-who__visual:hover
+.gham-who__image--main img {
+  transform: scale(1.035);
+}
+
+.gham-who__visual:hover
+.gham-who__image--small img {
+  transform: scale(1.06);
+}
+
+
+/* =========================================================
+   QUALITY CARD
+========================================================= */
+
+.gham-who__quality {
+  position: absolute;
+
+  left: -1.25rem;
+  bottom: 2rem;
+
+  width: 10rem;
+  min-height: 10rem;
+
+  padding: 1.3rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: var(--color-navy);
+
+  color: #fff;
+
+  border-radius: 0.35rem;
+
+  box-shadow:
+    0 1.5rem 3rem rgba(20, 22, 40, 0.14);
+
+  z-index: 3;
+
+  transform: translateY(0);
+
+  transition:
+    transform 700ms var(--ease-out),
+    box-shadow 700ms var(--ease-out);
+}
+
+.gham-who__visual:hover
+.gham-who__quality {
+  transform: translateY(-0.5rem);
+
+  box-shadow:
+    0 2rem 4rem rgba(20, 22, 40, 0.2);
+}
+
+.gham-who__quality-label {
+  font-size: 0.62rem;
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+
+  opacity: 0.65;
+}
+
+.gham-who__quality strong {
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  letter-spacing: -0.03em;
+}
+
+.gham-who__quality-copy {
+  max-width: 8rem;
+
+  font-size: 0.66rem;
+  line-height: 1.45;
+
+  color: rgba(255, 255, 255, 0.65);
+}
+
+
+/* =========================================================
+   FLOATING ORB
+========================================================= */
+
+.gham-who__orb {
+  position: absolute;
+
+  right: -2.5rem;
+  top: 18%;
+
+  width: 6rem;
+  height: 6rem;
+
+  border: 1px solid rgba(44, 46, 86, 0.12);
+
+  border-radius: 50%;
+
+  z-index: 0;
+
+  animation: gham-orb-float 7s ease-in-out infinite;
+}
+
+.gham-who__orb::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 1rem;
+
+  border: 1px solid rgba(202, 165, 98, 0.35);
+
+  border-radius: 50%;
+}
+
+@keyframes gham-orb-float {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-0.8rem) rotate(8deg);
+  }
+
+}
+
+
+/* =========================================================
+   CONTENT SIDE
+========================================================= */
+
+.gham-who__content {
+  position: relative;
+
+  max-width: 40rem;
+
+  z-index: 2;
+}
+
+
+/* Eyebrow */
+
+.gham-who__eyebrow {
+  display: flex;
+  align-items: center;
+
+  gap: 0.8rem;
+
+  margin-bottom: 2rem;
+
+  color: var(--color-muted);
+
+  font-size: 0.68rem;
+  font-weight: 600;
+
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.gham-who__eyebrow-line {
+  width: 2.4rem;
+  height: 1px;
+
+  background: var(--color-gold);
+
+  transform-origin: left center;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.gham-who__title {
+  max-width: 10ch;
+
+  margin: 0 0 2rem;
+
+  color: var(--color-navy);
+
+  font-size: clamp(3rem, 5vw, 5.5rem);
+
+  font-weight: 500;
+
+  letter-spacing: -0.055em;
+
+  line-height: 0.94;
+
+  text-wrap: balance;
+}
+
+.gham-who__title span {
+  display: block;
+
+  color: var(--color-ink);
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+.gham-who__text {
+  max-width: 34rem;
+
+  margin: 0 0 2.25rem;
+
+  color: var(--color-ink-soft);
+
+  font-size: clamp(1rem, 1.15vw, 1.12rem);
+
+  line-height: 1.72;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.gham-who__cta {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.85rem;
+
+  color: var(--color-navy);
+
+  font-size: 0.72rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+
+  text-decoration: none;
+
+  text-transform: uppercase;
+}
+
+.gham-who__cta-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 2.7rem;
+  height: 2.7rem;
+
+  border: 1px solid var(--color-line-strong);
+
+  border-radius: 50%;
+
+  transition:
+    background 450ms var(--ease-out),
+    color 450ms var(--ease-out),
+    transform 450ms var(--ease-out);
+}
+
+.gham-who__cta:hover
+.gham-who__cta-arrow {
+  background: var(--color-navy);
+
+  color: #fff;
+
+  transform: translateX(0.25rem);
+}
+
+
+/* =========================================================
+   CAPABILITIES
+========================================================= */
+
+.gham-who__capabilities {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  margin-top: clamp(3.5rem, 6vw, 5rem);
+
+  border-top: 1px solid var(--color-line);
+}
+
+.gham-who__capability {
+  min-height: 5.5rem;
+
+  padding: 1.25rem 1rem 1rem 0;
+
+  border-right: 1px solid var(--color-line);
+}
+
+.gham-who__capability:not(:first-child) {
+  padding-left: 1rem;
+}
+
+.gham-who__capability:last-child {
+  border-right: none;
+}
+
+.gham-who__capability span {
+  display: block;
+
+  margin-bottom: 0.7rem;
+
+  color: var(--color-gold);
+
+  font-size: 0.62rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+}
+
+.gham-who__capability strong {
+  display: block;
+
+  color: var(--color-ink);
+
+  font-size: 0.72rem;
+
+  font-weight: 500;
+
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.gham-who__visual,
+.gham-who__eyebrow,
+.gham-who__title,
+.gham-who__text,
+.gham-who__cta,
+.gham-who__capabilities {
+  opacity: 0;
+
+  transform: translateY(2.5rem);
+
+  transition:
+    opacity 900ms var(--ease-out),
+    transform 1000ms var(--ease-out);
+}
+
+.gham-who__visual {
+  transform: translateX(-2rem);
+}
+
+.gham-who__eyebrow {
+  transition-delay: 100ms;
+}
+
+.gham-who__title {
+  transition-delay: 180ms;
+}
+
+.gham-who__text {
+  transition-delay: 280ms;
+}
+
+.gham-who__cta {
+  transition-delay: 360ms;
+}
+
+.gham-who__capabilities {
+  transition-delay: 450ms;
+}
+
+.gham-who.is-visible
+.gham-who__visual,
+.gham-who.is-visible
+.gham-who__eyebrow,
+.gham-who.is-visible
+.gham-who__title,
+.gham-who.is-visible
+.gham-who__text,
+.gham-who.is-visible
+.gham-who__cta,
+.gham-who.is-visible
+.gham-who__capabilities {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+.gham-who.is-visible
+.gham-who__visual {
+  transform: translateX(0);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .gham-who__inner {
+    grid-template-columns: 1fr;
+
+    gap: 5rem;
+  }
+
+  .gham-who__visual {
+    max-width: 44rem;
+
+    min-height: 38rem;
+  }
+
+  .gham-who__content {
+    max-width: 42rem;
+  }
+
+  .gham-who__title {
+    max-width: 12ch;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .gham-who {
+    padding: 5rem 0;
+  }
+
+  .gham-who__inner {
+    width: min(
+      calc(100% - 2rem),
+      var(--container)
+    );
+
+    gap: 4rem;
+  }
+
+  .gham-who__visual {
+    min-height: 25rem;
+
+    grid-template-columns: 1.4fr 0.75fr;
+
+    gap: 0.65rem;
+  }
+
+  .gham-who__image--main {
+    min-height: 25rem;
+  }
+
+  .gham-who__image--small {
+    min-height: 9rem;
+  }
+
+  .gham-who__quality {
+    left: -0.4rem;
+    bottom: 1rem;
+
+    width: 8rem;
+    min-height: 8rem;
+
+    padding: 1rem;
+  }
+
+  .gham-who__quality strong {
+    font-size: 1.15rem;
+  }
+
+  .gham-who__quality-copy {
+    font-size: 0.58rem;
+  }
+
+  .gham-who__orb {
+    right: -1.5rem;
+
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .gham-who__title {
+    max-width: none;
+
+    font-size: clamp(2.8rem, 12vw, 4rem);
+
+    line-height: 0.96;
+  }
+
+  .gham-who__text {
+    font-size: 0.98rem;
+  }
+
+  .gham-who__capabilities {
+    grid-template-columns: 1fr;
+
+    margin-top: 3rem;
+  }
+
+  .gham-who__capability {
+    min-height: auto;
+
+    padding: 1rem 0;
+
+    border-right: none;
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .gham-who__capability:not(:first-child) {
+    padding-left: 0;
+  }
+
+  .gham-who__capability:last-child {
+    border-bottom: none;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .gham-who__orb {
+    animation: none;
+  }
+
+  .gham-who__visual,
+  .gham-who__eyebrow,
+  .gham-who__title,
+  .gham-who__text,
+  .gham-who__cta,
+  .gham-who__capabilities {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+  }
+
+  .gham-who__image img,
+  .gham-who__quality,
+  .gham-who__cta-arrow {
+    transition: none;
+  }
+
 }
