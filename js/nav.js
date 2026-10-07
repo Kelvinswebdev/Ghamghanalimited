@@ -1,259 +1,163 @@
 /* =========================================================
-   GHAM HEADER INTERACTIONS
-========================================================= */
+   GHAM MOBILE NAVIGATION
+   ========================================================= */
 
-(() => {
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector(".gham-header");
+  const menuToggle = document.querySelector(".gham-menu-toggle");
+  const mobileMenu = document.querySelector(".gham-mobile-menu");
 
-  /* ---------------------------------------------
-     Dropdowns
-  --------------------------------------------- */
+  if (!menuToggle || !mobileMenu) return;
 
-  const dropdownItems = document.querySelectorAll(
-    ".nav-item--dropdown"
-  );
+  const mobileLinks = mobileMenu.querySelectorAll("a");
 
-  dropdownItems.forEach((item) => {
+  /* -------------------------------------------------------
+     OPEN / CLOSE MENU
+     ------------------------------------------------------- */
 
-    const button = item.querySelector(
-      ".nav-dropdown-toggle"
-    );
+  function openMenu() {
+    menuToggle.classList.add("is-active");
+    mobileMenu.classList.add("is-open");
 
-    if (!button) return;
+    menuToggle.setAttribute("aria-expanded", "true");
 
-    button.addEventListener("click", (event) => {
+    document.body.classList.add("menu-open");
 
-      event.stopPropagation();
-
-      const isOpen = item.classList.contains("is-open");
-
-      // Close all dropdowns
-      dropdownItems.forEach((otherItem) => {
-        otherItem.classList.remove("is-open");
-
-        const otherButton =
-          otherItem.querySelector(
-            ".nav-dropdown-toggle"
-          );
-
-        if (otherButton) {
-          otherButton.setAttribute(
-            "aria-expanded",
-            "false"
-          );
-        }
-      });
-
-      // Open selected dropdown
-      if (!isOpen) {
-
-        item.classList.add("is-open");
-
-        button.setAttribute(
-          "aria-expanded",
-          "true"
-        );
-
-      }
-
-    });
-
-  });
-
-
-  /* Close dropdown when clicking outside */
-
-  document.addEventListener("click", () => {
-
-    dropdownItems.forEach((item) => {
-
-      item.classList.remove("is-open");
-
-      const button =
-        item.querySelector(
-          ".nav-dropdown-toggle"
-        );
-
-      if (button) {
-        button.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-      }
-
-    });
-
-  });
-
-
-  /* ---------------------------------------------
-     Search
-  --------------------------------------------- */
-
-  const searchButton =
-    document.querySelector(".header-search");
-
-  const searchOverlay =
-    document.querySelector(".search-overlay");
-
-  const searchClose =
-    document.querySelector(".search-overlay__close");
-
-  const searchInput =
-    document.querySelector(".search-form input");
-
-
-  const openSearch = () => {
-
-    if (!searchOverlay) return;
-
-    searchOverlay.classList.add("is-open");
-
-    searchOverlay.setAttribute(
-      "aria-hidden",
-      "false"
-    );
-
-    document.body.style.overflow = "hidden";
-
-    requestAnimationFrame(() => {
-      searchInput?.focus();
-    });
-
-  };
-
-
-  const closeSearch = () => {
-
-    if (!searchOverlay) return;
-
-    searchOverlay.classList.remove("is-open");
-
-    searchOverlay.setAttribute(
-      "aria-hidden",
-      "true"
-    );
-
-    document.body.style.overflow = "";
-
-  };
-
-
-  searchButton?.addEventListener(
-    "click",
-    openSearch
-  );
-
-  searchClose?.addEventListener(
-    "click",
-    closeSearch
-  );
-
-
-  /* Escape closes search */
-
-  document.addEventListener("keydown", (event) => {
-
-    if (event.key === "Escape") {
-
-      closeSearch();
-
-      dropdownItems.forEach((item) => {
-        item.classList.remove("is-open");
-      });
-
+    if (header) {
+      header.classList.add("menu-is-open");
     }
+  }
 
-  });
+  function closeMenu() {
+    menuToggle.classList.remove("is-active");
+    mobileMenu.classList.remove("is-open");
 
+    menuToggle.setAttribute("aria-expanded", "false");
 
-  /* ---------------------------------------------
-     Mobile navigation
-  --------------------------------------------- */
+    document.body.classList.remove("menu-open");
 
-  const mobileToggle =
-    document.querySelector(
-      ".mobile-menu-toggle"
-    );
-
-  const mobileNav =
-    document.querySelector(".mobile-nav");
-
-
-  mobileToggle?.addEventListener(
-    "click",
-    () => {
-
-      const isOpen =
-        mobileNav.classList.contains(
-          "is-open"
-        );
-
-      mobileNav.classList.toggle(
-        "is-open"
-      );
-
-      mobileNav.setAttribute(
-        "aria-hidden",
-        String(isOpen)
-      );
-
-      mobileToggle.setAttribute(
-        "aria-expanded",
-        String(!isOpen)
-      );
-
-      document.body.style.overflow =
-        isOpen ? "" : "hidden";
-
+    if (header) {
+      header.classList.remove("menu-is-open");
     }
-  );
+  }
 
+  function toggleMenu() {
+    const isOpen = mobileMenu.classList.contains("is-open");
 
-  /* ---------------------------------------------
-     Dark mode
-  --------------------------------------------- */
-
-  const darkToggle =
-    document.querySelector(".dark-toggle");
-
-  const savedTheme =
-    localStorage.getItem("gham-theme");
-
-  if (savedTheme === "dark") {
-
-    document.documentElement.classList.add(
-      "dark-mode"
-    );
-
-    darkToggle?.setAttribute(
-      "aria-pressed",
-      "true"
-    );
-
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   }
 
 
-  darkToggle?.addEventListener(
-    "click",
-    () => {
+  /* -------------------------------------------------------
+     MENU BUTTON
+     ------------------------------------------------------- */
 
-      const isDark =
-        document.documentElement.classList.toggle(
-          "dark-mode"
-        );
+  menuToggle.addEventListener("click", toggleMenu);
 
-      darkToggle.setAttribute(
-        "aria-pressed",
-        String(isDark)
-      );
 
-      localStorage.setItem(
-        "gham-theme",
-        isDark ? "dark" : "light"
-      );
+  /* -------------------------------------------------------
+     CLOSE WHEN A LINK IS CLICKED
+     ------------------------------------------------------- */
 
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      closeMenu();
+    });
+  });
+
+
+  /* -------------------------------------------------------
+     ESCAPE KEY
+     ------------------------------------------------------- */
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
     }
+  });
+
+
+  /* -------------------------------------------------------
+     CLOSE WHEN RESIZING TO DESKTOP
+     ------------------------------------------------------- */
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 767) {
+      closeMenu();
+    }
+  });
+
+
+  /* -------------------------------------------------------
+     PREVENT BACKGROUND SCROLLING
+     ------------------------------------------------------- */
+
+  document.addEventListener("touchmove", (event) => {
+    if (mobileMenu.classList.contains("is-open")) {
+      if (!mobileMenu.contains(event.target)) {
+        event.preventDefault();
+      }
+    }
+  }, {
+    passive: false
+  });
+
+
+  /* -------------------------------------------------------
+     MOBILE DROPDOWNS
+     ------------------------------------------------------- */
+
+  const dropdownToggles = mobileMenu.querySelectorAll(
+    "[data-mobile-dropdown]"
   );
 
+  dropdownToggles.forEach((toggle) => {
 
-})();
+    toggle.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      const parent = toggle.closest(".gham-mobile-dropdown");
+
+      if (!parent) return;
+
+      const dropdown = parent.querySelector(
+        ".gham-mobile-dropdown__content"
+      );
+
+      if (!dropdown) return;
+
+      const isOpen = parent.classList.contains("is-open");
+
+      /* Close other dropdowns */
+      mobileMenu
+        .querySelectorAll(".gham-mobile-dropdown.is-open")
+        .forEach((item) => {
+          if (item !== parent) {
+            item.classList.remove("is-open");
+
+            const button = item.querySelector(
+              "[data-mobile-dropdown]"
+            );
+
+            if (button) {
+              button.setAttribute("aria-expanded", "false");
+            }
+          }
+        });
+
+      /* Toggle current dropdown */
+      parent.classList.toggle("is-open", !isOpen);
+
+      toggle.setAttribute(
+        "aria-expanded",
+        String(!isOpen)
+      );
+    });
+
+  });
+
+});
