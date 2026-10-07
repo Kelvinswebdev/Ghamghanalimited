@@ -590,371 +590,691 @@
   ====================================================== -->
 
   <main>
-<section class="gham-hero" data-gham-hero>
 
-  <!-- ==========================================
-       SLIDER
-  =========================================== -->
-
-  <div class="gham-hero__viewport">
-
-    <div class="gham-hero__track" data-hero-track>
-
-
-      <!-- ========================================
-           SLIDE 01
-      ========================================= -->
-
-      <article class="gham-hero__slide">
-
-        <div class="gham-hero__image">
-
-          <picture>
-            <source
-              media="(max-width: 768px)"
-              srcset="assets/images/hero/tea-plantation-mobile-800.webp"
-            >
-
-            <img
-              src="assets/images/hero/tea-plantation-desktop-1600.webp"
-              alt="Tea plantation workers harvesting crops"
-            >
-          </picture>
-
-        </div>
-
-
-        <div class="gham-hero__overlay"></div>
-
-
-        <div class="gham-hero__content">
-
-          <p class="gham-hero__eyebrow">
-            <span>01</span>
-            GHAM Ghana Ltd
-          </p>
-
-          <h1 class="gham-hero__title">
-            Building products
-            <br>
-            for everyday life.
-          </h1>
-
-          <p class="gham-hero__description">
-            We develop, produce and grow consumer products
-            built on quality, trust and lasting value.
-          </p>
-
-          <a
-            href="about.html"
-            class="gham-hero__button"
-          >
-            Discover GHAM
-
-            <span>
-              →
-            </span>
-          </a>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- ========================================
-           SLIDE 02
-      ========================================= -->
-
-      <article class="gham-hero__slide">
-
-        <div class="gham-hero__image">
-
-          <picture>
-            <source
-              media="(max-width: 768px)"
-              srcset="assets/images/hero/slide-02-mobile-800.webp"
-            >
-
-            <img
-              src="assets/images/hero/slide-02-desktop-1600.webp"
-              alt="GHAM consumer products"
-            >
-            
-          </picture>
-
-        </div>
-
-
-        <div class="gham-hero__overlay"></div>
-
-
-        <div class="gham-hero__content">
-
-          <p class="gham-hero__eyebrow">
-            <span>02</span>
-            Our Brands
-          </p>
-
-          <h2 class="gham-hero__title">
-            Brands made
-            <br>
-            for everyday life.
-          </h2>
-
-          <p class="gham-hero__description">
-            A growing portfolio of consumer brands created
-            with care for the moments that matter.
-          </p>
-
-          <a
-            href="brands.html"
-            class="gham-hero__button"
-          >
-            Explore our brands
-
-            <span>
-              →
-            </span>
-          </a>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- ========================================
-           SLIDE 03
-      ========================================= -->
-
-      <article class="gham-hero__slide">
-
-        <div class="gham-hero__image">
-
-          <picture>
-            <source
-              media="(max-width: 768px)"
-              srcset="assets/images/hero/dairy-milking-mobile-800.webp"
-            >
-
-            <img
-              src="assets/images/hero/dairy-milking-desktop-1600.webp"
-              alt="Agricultural production"
-            >
-
-          </picture>
-
-        </div>
-
-
-        <div class="gham-hero__overlay"></div>
-
-
-        <div class="gham-hero__content">
-
-          <p class="gham-hero__eyebrow">
-            <span>03</span>
-            Our Business
-          </p>
-
-          <h2 class="gham-hero__title">
-            From product idea
-            <br>
-            to market.
-          </h2>
-
-          <p class="gham-hero__description">
-            From product development and production to
-            distribution and market expansion.
-          </p>
-
-          <a
-            href="business.html"
-            class="gham-hero__button"
-          >
-            Our business
-
-            <span>
-              →
-            </span>
-          </a>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- ========================================
-           SLIDE 04
-      ========================================= -->
-
-      <article class="gham-hero__slide">
-
-        <div class="gham-hero__image">
-
-          <picture>
-            <source
-              media="(max-width: 768px)"
-              srcset="assets/images/hero/highland-cattle-mobile-800.webp"
-            >
-
-            <img
-              src="assets/images/hero/highland-cattle-desktop-1600.webp"
-              alt="Agricultural landscape representing responsible growth"
-            >
-
-          </picture>
-
-        </div>
-
-
-        <div class="gham-hero__overlay"></div>
-
-
-        <div class="gham-hero__content">
-
-          <p class="gham-hero__eyebrow">
-            <span>04</span>
-            Growth &amp; Purpose
-          </p>
-
-          <h2 class="gham-hero__title">
-            Growing with
-            <br>
-            purpose.
-          </h2>
-
-          <p class="gham-hero__description">
-            Responsible growth, uncompromising quality and
-            investment in people, partners and communities.
-          </p>
-
-          <a
-            href="sustainability.html"
-            class="gham-hero__button"
-          >
-            Our approach
-
-            <span>
-              →
-            </span>
-          </a>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- ==========================================
-       CONTROLS
-  =========================================== -->
-
-  <div class="gham-hero__controls">
-
-    <div class="gham-hero__controls-inner">
-
-
-      <div class="gham-hero__progress">
-
-        <span
-          class="gham-hero__current"
-          data-hero-current
+    <section
+      class="hero"
+      aria-roledescription="carousel"
+      aria-label="GHAM Ghana Ltd highlights"
+      data-hero
+    >
+
+      <h1 class="visually-hidden">
+        GHAM Ghana Limited — consumer goods for everyday life
+      </h1>
+
+
+      <!-- =========================
+           SLIDES
+      ========================== -->
+
+      <div
+        class="hero-slides"
+        id="hero-slides"
+        aria-live="off"
+        data-hero-slides
+      >
+
+
+        <!-- =================================================
+             SLIDE 01
+        ================================================== -->
+
+        <article
+          class="hero-slide is-active"
+          id="hero-slide-1"
+          role="group"
+          aria-roledescription="slide"
+          aria-label="1 of 4: GHAM Ghana Limited"
+          data-hero-slide
         >
-          01
-        </span>
+
+          <div class="hero-slide__media">
+
+            <picture>
+
+              <source
+                media="(max-width: 47.99em)"
+                srcset="assets/images/hero/gham-products-mobile.webp"
+              >
+
+              <img
+                src="assets/images/hero/gham-products-desktop.webp"
+                width="1920"
+                height="1080"
+                fetchpriority="high"
+                decoding="async"
+                alt="GHAM consumer products arranged in a refined product setting"
+              >
+
+            </picture>
+
+          </div>
 
 
-        <div class="gham-hero__bars">
+          <div class="hero-slide__body">
 
-          <button
-            type="button"
-            data-hero-go="0"
-            aria-label="Go to slide 1"
-          >
-            <span></span>
-          </button>
+            <div
+              class="hero-slide__content"
+              data-hero-hover
+            >
 
-          <button
-            type="button"
-            data-hero-go="1"
-            aria-label="Go to slide 2"
-          >
-            <span></span>
-          </button>
+              <p class="hero-eyebrow">
 
-          <button
-            type="button"
-            data-hero-go="2"
-            aria-label="Go to slide 3"
-          >
-            <span></span>
-          </button>
+                <span class="hero-eyebrow__num">
+                  01
+                </span>
 
-          <button
-            type="button"
-            data-hero-go="3"
-            aria-label="Go to slide 4"
-          >
-            <span></span>
-          </button>
+                GHAM Ghana Ltd
 
-        </div>
+              </p>
 
 
-        <span class="gham-hero__total">
-          04
-        </span>
+              <h2 class="hero-title">
+
+                <span class="hero-title__line">
+                  <span>
+                    Products for
+                  </span>
+                </span>
+
+                <span class="hero-title__line">
+                  <span>
+                    everyday life.
+                  </span>
+                </span>
+
+              </h2>
+
+
+              <p class="hero-copy">
+                We create and grow consumer products built
+                around quality, care and the needs of everyday
+                consumers.
+              </p>
+
+
+              <a
+                class="hero-cta"
+                href="about.html"
+              >
+
+                <span>
+                  Discover GHAM
+                </span>
+
+                <svg
+                  class="hero-cta__arrow"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M3 10h13M11 5l5 5-5 5"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                </svg>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             SLIDE 02 — BRANDS
+        ================================================== -->
+
+        <article
+          class="hero-slide"
+          id="hero-slide-2"
+          role="group"
+          aria-roledescription="slide"
+          aria-label="2 of 4: Our Brands"
+          data-hero-slide
+        >
+
+          <div class="hero-slide__media">
+
+            <picture>
+
+              <source
+                media="(max-width: 47.99em)"
+                data-srcset="assets/images/hero/brands-mobile.webp"
+              >
+
+              <img
+                data-src="assets/images/hero/brands-desktop.webp"
+                width="1920"
+                height="1080"
+                decoding="async"
+                alt="GHAM consumer brands"
+              >
+
+            </picture>
+
+          </div>
+
+
+          <div class="hero-slide__body">
+
+            <div
+              class="hero-slide__content"
+              data-hero-hover
+            >
+
+              <p class="hero-eyebrow">
+
+                <span class="hero-eyebrow__num">
+                  02
+                </span>
+
+                Our Brands
+
+              </p>
+
+
+              <h2 class="hero-title">
+
+                <span class="hero-title__line">
+                  <span>
+                    Brands people
+                  </span>
+                </span>
+
+                <span class="hero-title__line">
+                  <span>
+                    can live with.
+                  </span>
+                </span>
+
+              </h2>
+
+
+              <p class="hero-copy">
+                A growing portfolio of consumer brands
+                designed to earn a meaningful place in
+                everyday life.
+              </p>
+
+
+              <a
+                class="hero-cta"
+                href="brands.html"
+              >
+
+                <span>
+                  Explore Our Brands
+                </span>
+
+                <svg
+                  class="hero-cta__arrow"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M3 10h13M11 5l5 5-5 5"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                </svg>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             SLIDE 03 — BUSINESS
+        ================================================== -->
+
+        <article
+          class="hero-slide"
+          id="hero-slide-3"
+          role="group"
+          aria-roledescription="slide"
+          aria-label="3 of 4: Our Business"
+          data-hero-slide
+        >
+
+          <div class="hero-slide__media">
+
+            <picture>
+
+              <source
+                media="(max-width: 47.99em)"
+                data-srcset="assets/images/hero/business-mobile.webp"
+              >
+
+              <img
+                data-src="assets/images/hero/business-desktop.webp"
+                width="1920"
+                height="1080"
+                decoding="async"
+                alt="GHAM business operations and product development"
+              >
+
+            </picture>
+
+          </div>
+
+
+          <div class="hero-slide__body">
+
+            <div
+              class="hero-slide__content"
+              data-hero-hover
+            >
+
+              <p class="hero-eyebrow">
+
+                <span class="hero-eyebrow__num">
+                  03
+                </span>
+
+                Our Business
+
+              </p>
+
+
+              <h2 class="hero-title">
+
+                <span class="hero-title__line">
+                  <span>
+                    From product
+                  </span>
+                </span>
+
+                <span class="hero-title__line">
+                  <span>
+                    to market.
+                  </span>
+                </span>
+
+              </h2>
+
+
+              <p class="hero-copy">
+                We bring together product development,
+                operations, distribution and market knowledge
+                to move ideas into products people can trust.
+              </p>
+
+
+              <a
+                class="hero-cta"
+                href="business.html"
+              >
+
+                <span>
+                  Explore Our Business
+                </span>
+
+                <svg
+                  class="hero-cta__arrow"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M3 10h13M11 5l5 5-5 5"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                </svg>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             SLIDE 04 — GROWTH
+        ================================================== -->
+
+        <article
+          class="hero-slide"
+          id="hero-slide-4"
+          role="group"
+          aria-roledescription="slide"
+          aria-label="4 of 4: Growth and Purpose"
+          data-hero-slide
+        >
+
+          <div class="hero-slide__media">
+
+            <picture>
+
+              <source
+                media="(max-width: 47.99em)"
+                data-srcset="assets/images/hero/growth-mobile.webp"
+              >
+
+              <img
+                data-src="assets/images/hero/growth-desktop.webp"
+                width="1920"
+                height="1080"
+                decoding="async"
+                alt="People working together toward responsible business growth"
+              >
+
+            </picture>
+
+          </div>
+
+
+          <div class="hero-slide__body">
+
+            <div
+              class="hero-slide__content"
+              data-hero-hover
+            >
+
+              <p class="hero-eyebrow">
+
+                <span class="hero-eyebrow__num">
+                  04
+                </span>
+
+                Our Direction
+
+              </p>
+
+
+              <h2 class="hero-title">
+
+                <span class="hero-title__line">
+                  <span>
+                    Growing with
+                  </span>
+                </span>
+
+                <span class="hero-title__line">
+                  <span>
+                    purpose.
+                  </span>
+                </span>
+
+              </h2>
+
+
+              <p class="hero-copy">
+                We are building a stronger Ghanaian
+                consumer-goods business through responsible
+                growth, quality and long-term partnerships.
+              </p>
+
+
+              <a
+                class="hero-cta"
+                href="sustainability.html"
+              >
+
+                <span>
+                  Our Approach
+                </span>
+
+                <svg
+                  class="hero-cta__arrow"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M3 10h13M11 5l5 5-5 5"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                </svg>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
 
       </div>
 
 
 
-      <div class="gham-hero__actions">
+      <!-- =================================================
+           HERO CONTROLS
+      ================================================== -->
 
-        <button
-          type="button"
-          class="gham-hero__control"
-          data-hero-play
-          aria-label="Pause slideshow"
-        >
-          <span class="hero-pause">Ⅱ</span>
-          <span class="hero-play">▶</span>
-        </button>
+      <div
+        class="hero-controls"
+        data-hero-controls
+        data-hero-hover
+      >
 
-
-        <button
-          type="button"
-          class="gham-hero__control"
-          data-hero-prev
-          aria-label="Previous slide"
-        >
-          ←
-        </button>
+        <div class="hero-controls__inner">
 
 
-        <button
-          type="button"
-          class="gham-hero__control"
-          data-hero-next
-          aria-label="Next slide"
-        >
-          →
-        </button>
+          <!-- Progress -->
+
+          <div class="hero-progress">
+
+            <span
+              class="hero-count"
+              aria-hidden="true"
+            >
+
+              <span
+                class="hero-count__current"
+                data-hero-count
+              >
+                01
+              </span>
+
+            </span>
+
+
+            <ol
+              class="hero-progress__track"
+              role="list"
+            >
+
+              <li>
+
+                <button
+                  class="hero-progress__seg is-current"
+                  type="button"
+                  aria-label="Go to slide 1: GHAM Ghana Ltd"
+                  aria-controls="hero-slide-1"
+                  data-hero-goto="0"
+                >
+
+                  <span
+                    class="hero-progress__fill"
+                  ></span>
+
+                </button>
+
+              </li>
+
+
+              <li>
+
+                <button
+                  class="hero-progress__seg"
+                  type="button"
+                  aria-label="Go to slide 2: Our Brands"
+                  aria-controls="hero-slide-2"
+                  data-hero-goto="1"
+                >
+
+                  <span
+                    class="hero-progress__fill"
+                  ></span>
+
+                </button>
+
+              </li>
+
+
+              <li>
+
+                <button
+                  class="hero-progress__seg"
+                  type="button"
+                  aria-label="Go to slide 3: Our Business"
+                  aria-controls="hero-slide-3"
+                  data-hero-goto="2"
+                >
+
+                  <span
+                    class="hero-progress__fill"
+                  ></span>
+
+                </button>
+
+              </li>
+
+
+              <li>
+
+                <button
+                  class="hero-progress__seg"
+                  type="button"
+                  aria-label="Go to slide 4: Growth and Purpose"
+                  aria-controls="hero-slide-4"
+                  data-hero-goto="3"
+                >
+
+                  <span
+                    class="hero-progress__fill"
+                  ></span>
+
+                </button>
+
+              </li>
+
+            </ol>
+
+
+            <span
+              class="hero-count hero-count--total"
+              aria-hidden="true"
+            >
+              04
+            </span>
+
+          </div>
+
+
+          <!-- Controls -->
+
+          <div class="hero-buttons">
+
+            <button
+              class="hero-btn"
+              type="button"
+              aria-label="Pause slideshow"
+              data-hero-toggle
+            >
+
+              <svg
+                class="hero-btn__pause"
+                viewBox="0 0 20 20"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7 5v10M13 5v10"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+              </svg>
+
+
+              <svg
+                class="hero-btn__play"
+                viewBox="0 0 20 20"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7 4.5v11l8.5-5.5z"
+                  fill="currentColor"
+                />
+              </svg>
+
+            </button>
+
+
+            <button
+              class="hero-btn"
+              type="button"
+              aria-label="Previous slide"
+              aria-controls="hero-slides"
+              data-hero-prev
+            >
+
+              <svg
+                viewBox="0 0 20 20"
+                fill="none"
+                aria-hidden="true"
+              >
+
+                <path
+                  d="M17 10H4M9 5l-5 5 5 5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+
+              </svg>
+
+            </button>
+
+
+            <button
+              class="hero-btn"
+              type="button"
+              aria-label="Next slide"
+              aria-controls="hero-slides"
+              data-hero-next
+            >
+
+              <svg
+                viewBox="0 0 20 20"
+                fill="none"
+                aria-hidden="true"
+              >
+
+                <path
+                  d="M3 10h13M11 5l5 5-5 5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+
+              </svg>
+
+            </button>
+
+          </div>
+
+        </div>
 
       </div>
 
-    </div>
-
-  </div>
-
-</section>
+    </section>
 
   </main>
 
@@ -1038,7 +1358,6 @@
 
   <!-- JavaScript -->
   <script src="js/main.js"></script>
-  <script src="js/hero.js"></script>
 
 </body>
 </html>
