@@ -1,668 +1,984 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GHAM Ghana Ltd</title>
-  <meta name="description" content="GHAM Ghana Ltd — consumer goods and brand building.">
-  <meta name="theme-color" content="#FBFAF7">
-  <link rel="icon" href="data:,">
+  <meta charset="UTF-8">
 
-  <!-- Flag JS early so the mobile menu never flashes open before main.js loads -->
-  <script>document.documentElement.classList.add('js');</script>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap">
+  <meta
+    name="description"
+    content="GHAM Ghana Limited — a consumer goods company creating products for everyday life."
+  >
+
+  <title>GHAM Ghana Limited | Consumer Goods</title>
 
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
 </head>
+
 <body>
 
-  <!-- ============ Global header ============ -->
-<!-- =========================================================
-     GHAM HEADER
-========================================================= -->
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
 
-<!-- =========================================================
-     GHAM GHANA LIMITED
-     SITE HEADER
-========================================================= -->
+  <header class="site-header" data-header>
 
-<header class="site-header">
+    <!-- =========================
+         UTILITY BAR
+    ========================== -->
 
-  <!-- =======================================================
-       TOP UTILITY BAR
-  ======================================================== -->
-  <div class="header-utility">
+    <div class="header-utility">
 
-    <div class="header-utility__inner">
+      <div class="header-utility__inner">
 
-      <div class="header-utility__right">
+        <div class="header-utility__right">
 
-        <!-- Dark Mode -->
-        <button
-          class="dark-toggle"
-          type="button"
-          aria-label="Toggle dark mode"
-          aria-pressed="false"
+          <!-- Dark Mode -->
+          <button
+            class="dark-toggle"
+            type="button"
+            aria-label="Toggle dark mode"
+            aria-pressed="false"
+            data-theme-toggle
+          >
+
+            <span class="dark-toggle__label">
+              Dark mode
+            </span>
+
+            <span
+              class="dark-toggle__icon"
+              aria-hidden="true"
+            >
+              i
+            </span>
+
+            <span
+              class="dark-toggle__switch"
+              aria-hidden="true"
+            >
+              <span></span>
+            </span>
+
+          </button>
+
+
+          <!-- Global / Country -->
+          <button
+            class="global-site"
+            type="button"
+            aria-expanded="false"
+            aria-controls="country-menu"
+            data-country-toggle
+          >
+
+            <span
+              class="global-site__globe"
+              aria-hidden="true"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="9"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+
+                <path
+                  d="M3 12h18M12 3c2.4 2.6 3.6 5.6 3.6 9S14.4 18.4 12 21c-2.4-2.6-3.6-5.6-3.6-9S9.6 5.6 12 3Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </span>
+
+            <span class="global-site__text">
+              Ghana
+            </span>
+
+            <svg
+              class="global-site__chevron"
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M2 4L6 8L10 4"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+            </svg>
+
+          </button>
+
+
+          <!-- Contact -->
+          <a
+            class="header-contact"
+            href="contact.html"
+          >
+            Contact us
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         BRAND ROW
+    ========================== -->
+
+    <div class="header-main">
+
+      <div class="header-main__inner">
+
+        <!-- GHAM Logo -->
+
+        <a
+          class="site-logo"
+          href="index.html"
+          aria-label="GHAM Ghana Limited — Home"
         >
-          <span class="dark-toggle__label">
-            Dark mode
-          </span>
 
-          <span class="dark-toggle__icon" aria-hidden="true">
-            i
-          </span>
+          <img
+            src="assets/images/gham-logo.svg"
+            alt="GHAM Ghana Limited"
+          >
 
-          <span class="dark-toggle__switch" aria-hidden="true">
-            <span></span>
-          </span>
-        </button>
+        </a>
 
 
-        <!-- Country / Global Site -->
+        <!-- Search -->
+
         <button
-          class="global-site"
+          class="header-search"
           type="button"
-          aria-expanded="false"
-          aria-controls="country-menu"
+          aria-label="Open search"
+          data-search-open
         >
+
+          <span class="header-search__text">
+            Search GHAM
+          </span>
 
           <span
-            class="global-site__globe"
+            class="header-search__icon"
             aria-hidden="true"
           >
             <svg
-              width="22"
-              height="22"
+              width="24"
+              height="24"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <circle
-                cx="12"
-                cy="12"
-                r="9.5"
+                cx="11"
+                cy="11"
+                r="6.5"
                 stroke="currentColor"
-                stroke-width="1.3"
+                stroke-width="1.5"
               />
 
               <path
-                d="M2.5 12H21.5"
+                d="M16 16L21 21"
                 stroke="currentColor"
-                stroke-width="1.3"
-              />
-
-              <path
-                d="M12 2.5C14.4 5.1 15.6 8.3 15.6 12C15.6 15.7 14.4 18.9 12 21.5"
-                stroke="currentColor"
-                stroke-width="1.3"
-              />
-
-              <path
-                d="M12 2.5C9.6 5.1 8.4 8.3 8.4 12C8.4 15.7 9.6 18.9 12 21.5"
-                stroke="currentColor"
-                stroke-width="1.3"
+                stroke-width="1.5"
               />
             </svg>
           </span>
 
-          <span class="global-site__text">
-            You are on our Ghana Site
-          </span>
+        </button>
+
+
+        <!-- Mobile Menu -->
+
+        <button
+          class="mobile-menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-navigation"
+          data-mobile-toggle
+        >
+
+          <span></span>
+          <span></span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         DESKTOP NAVIGATION
+    ========================== -->
+
+    <nav
+      class="main-nav"
+      aria-label="Main navigation"
+    >
+
+      <div class="main-nav__inner">
+
+        <!-- Home -->
+
+        <a
+          class="main-nav__home"
+          href="index.html"
+          aria-label="GHAM Home"
+        >
 
           <svg
-            class="global-site__chevron"
-            width="14"
-            height="14"
-            viewBox="0 0 14 14"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
             fill="none"
             aria-hidden="true"
           >
             <path
-              d="M3 5L7 9L11 5"
+              d="M3 10.5L12 3L21 10.5"
               stroke="currentColor"
               stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+            />
+
+            <path
+              d="M5.5 9.5V21H18.5V9.5"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+
+            <path
+              d="M9.5 21V14H14.5V21"
+              stroke="currentColor"
+              stroke-width="1.5"
             />
           </svg>
 
-        </button>
+        </a>
+
+
+        <!-- About -->
+
+        <div class="nav-item">
+
+          <a
+            class="nav-link"
+            href="about.html"
+          >
+            About us
+          </a>
+
+        </div>
+
+
+        <!-- Brands -->
+
+        <div class="nav-item nav-item--dropdown">
+
+          <button
+            class="nav-link nav-dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-dropdown-toggle
+          >
+
+            <span>Brands</span>
+
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M2 4L6 8L10 4"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+            </svg>
+
+          </button>
+
+          <div class="nav-dropdown">
+
+            <a href="brands.html">
+              Our Brands
+            </a>
+
+            <a href="brands/amandah.html">
+              Amandah
+            </a>
+
+            <a href="products.html">
+              Products
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- Business -->
+
+        <div class="nav-item nav-item--dropdown">
+
+          <button
+            class="nav-link nav-dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            data-dropdown-toggle
+          >
+
+            <span>Business</span>
+
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M2 4L6 8L10 4"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+            </svg>
+
+          </button>
+
+          <div class="nav-dropdown">
+
+            <a href="business.html">
+              Our Business
+            </a>
+
+            <a href="business/product-development.html">
+              Product Development
+            </a>
+
+            <a href="business/distribution.html">
+              Distribution
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- Quality -->
+
+        <div class="nav-item">
+
+          <a
+            class="nav-link"
+            href="quality.html"
+          >
+            Quality &amp; Safety
+          </a>
+
+        </div>
+
+
+        <!-- Sustainability -->
+
+        <div class="nav-item">
+
+          <a
+            class="nav-link"
+            href="sustainability.html"
+          >
+            Sustainability
+          </a>
+
+        </div>
+
+
+        <!-- Spacer -->
+
+        <div class="main-nav__spacer"></div>
+
+
+        <!-- Careers -->
+
+        <a
+          class="main-nav__secondary-link"
+          href="careers.html"
+        >
+          Careers
+        </a>
+
+
+        <!-- News -->
+
+        <a
+          class="main-nav__secondary-link"
+          href="news.html"
+        >
+          News
+        </a>
 
 
         <!-- Contact -->
+
         <a
+          class="main-nav__secondary-link"
           href="contact.html"
-          class="header-contact"
         >
-          Contact us
+          Contact
         </a>
 
       </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- =======================================================
-       BRAND / SEARCH AREA
-  ======================================================== -->
-  <div class="header-main">
-
-    <div class="header-main__inner">
-
-
-      <!-- =================================================
-           GHAM LOGO
-      ================================================== -->
-      <a
-        href="index.html"
-        class="site-logo"
-        aria-label="GHAM Ghana Limited — Home"
-      >
-
-        <img
-          src="pics/gham-logo.svg"
-          alt="GHAM Ghana Limited"
-        />
-
-      </a>
-
-
-      <!-- =================================================
-           SEARCH
-      ================================================== -->
-      <button
-        class="header-search"
-        type="button"
-        aria-label="Search GHAM"
-        aria-controls="search-overlay"
-      >
-
-        <span class="header-search__text">
-          Ask or search anything...
-        </span>
-
-        <span
-          class="header-search__icon"
-          aria-hidden="true"
-        >
-
-          <svg
-            width="28"
-            height="28"
-            viewBox="0 0 28 28"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-
-            <circle
-              cx="12"
-              cy="12"
-              r="7.5"
-              stroke="currentColor"
-              stroke-width="1.5"
-            />
-
-            <path
-              d="M17.5 17.5L24 24"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-            />
-
-          </svg>
-
-        </span>
-
-      </button>
-
-
-      <!-- =================================================
-           MOBILE MENU BUTTON
-      ================================================== -->
-      <button
-        class="mobile-menu-toggle"
-        type="button"
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-        aria-controls="mobile-navigation"
-      >
-
-        <span></span>
-        <span></span>
-
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <!-- =======================================================
-       PRIMARY NAVIGATION
-  ======================================================== -->
-  <nav
-    class="main-nav"
-    aria-label="Primary navigation"
-  >
-
-    <div class="main-nav__inner">
-
-
-      <!-- =================================================
-           HOME
-      ================================================== -->
-      <a
-        href="index.html"
-        class="main-nav__home"
-        aria-label="Home"
-      >
-
-        <svg
-          width="26"
-          height="26"
-          viewBox="0 0 26 26"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
-
-          <path
-            d="M3.5 11.5L13 3.5L22.5 11.5"
-            stroke="currentColor"
-            stroke-width="1.4"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-
-          <path
-            d="M5.5 10.5V22H20.5V10.5"
-            stroke="currentColor"
-            stroke-width="1.4"
-            stroke-linejoin="round"
-          />
-
-          <path
-            d="M10 22V15H16V22"
-            stroke="currentColor"
-            stroke-width="1.4"
-            stroke-linejoin="round"
-          />
-
-        </svg>
-
-      </a>
-
-
-      <!-- =================================================
-           ABOUT
-      ================================================== -->
-      <div class="nav-item">
-
-        <a
-          href="about.html"
-          class="nav-link"
-        >
-          About us
-        </a>
-
-      </div>
-
-
-      <!-- =================================================
-           BRANDS
-      ================================================== -->
-      <div class="nav-item nav-item--dropdown">
-
-        <button
-          type="button"
-          class="nav-link nav-dropdown-toggle"
-          aria-expanded="false"
-          aria-haspopup="true"
-        >
-
-          <span>Brands</span>
-
-          <svg
-            width="12"
-            height="12"
-            viewBox="0 0 12 12"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M2.5 4.5L6 8L9.5 4.5"
-              stroke="currentColor"
-              stroke-width="1.3"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-
-        </button>
-
-
-        <!-- Brands Dropdown -->
-        <div class="nav-dropdown">
-
-          <a href="brands.html">
-            Our brands
-          </a>
-
-          <a href="brands/amandah.html">
-            Amandah
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- =================================================
-           BUSINESS
-      ================================================== -->
-      <div class="nav-item nav-item--dropdown">
-
-        <button
-          type="button"
-          class="nav-link nav-dropdown-toggle"
-          aria-expanded="false"
-          aria-haspopup="true"
-        >
-
-          <span>Business</span>
-
-          <svg
-            width="12"
-            height="12"
-            viewBox="0 0 12 12"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M2.5 4.5L6 8L9.5 4.5"
-              stroke="currentColor"
-              stroke-width="1.3"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-
-        </button>
-
-
-        <!-- Business Dropdown -->
-        <div class="nav-dropdown">
-
-          <a href="business.html">
-            Our business
-          </a>
-
-          <a href="business/product-development.html">
-            Product development
-          </a>
-
-          <a href="business/distribution.html">
-            Distribution
-          </a>
-
-          <a href="business/market-expansion.html">
-            Market expansion
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- =================================================
-           QUALITY & SAFETY
-      ================================================== -->
-      <div class="nav-item">
-
-        <a
-          href="quality.html"
-          class="nav-link"
-        >
-          Quality &amp; Safety
-        </a>
-
-      </div>
-
-
-      <!-- =================================================
-           SUSTAINABILITY
-      ================================================== -->
-      <div class="nav-item">
-
-        <a
-          href="sustainability.html"
-          class="nav-link"
-        >
-          Sustainability
-        </a>
-
-      </div>
-
-
-      <!-- =================================================
-           NEWS
-      ================================================== -->
-      <div class="nav-item">
-
-        <a
-          href="news.html"
-          class="nav-link"
-        >
-          News &amp; Insights
-        </a>
-
-      </div>
-
-
-      <!-- =================================================
-           FLEXIBLE SPACE
-      ================================================== -->
-      <div class="main-nav__spacer"></div>
-
-
-      <!-- =================================================
-           CAREERS
-      ================================================== -->
-      <a
-        href="careers.html"
-        class="main-nav__secondary-link"
-      >
-        Careers
-      </a>
-
-
-      <!-- =================================================
-           CONTACT
-      ================================================== -->
-      <a
-        href="contact.html"
-        class="main-nav__secondary-link"
-      >
-        Contact
-      </a>
-
-    </div>
-
-  </nav>
-
-</header>
-
-
-
-<!-- =========================================================
-     COUNTRY / GLOBAL SITE MENU
-========================================================= -->
-
-<div
-  id="country-menu"
-  class="country-menu"
-  aria-hidden="true"
->
-
-  <div class="country-menu__inner">
-
-    <div class="country-menu__header">
-
-      <span>
-        GHAM Global Sites
-      </span>
-
-      <button
-        type="button"
-        class="country-menu__close"
-        aria-label="Close country menu"
-      >
-        &times;
-      </button>
-
-    </div>
-
-    <div class="country-menu__body">
-
-      <a href="#">
-        Ghana
-      </a>
-
-      <a href="#">
-        West Africa
-      </a>
-
-      <a href="#">
-        International
-      </a>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-
-<!-- =========================================================
-     MOBILE NAVIGATION
-========================================================= -->
-
-<div
-  id="mobile-navigation"
-  class="mobile-nav"
-  aria-hidden="true"
->
-
-  <div class="mobile-nav__inner">
-
-
-    <!-- Mobile navigation header -->
-
-    <div class="mobile-nav__header">
-
-      <a
-        href="index.html"
-        class="mobile-nav__logo"
-      >
-
-        <img
-          src="pics/gham-logo.svg"
-          alt="GHAM Ghana Limited"
-        />
-
-      </a>
-
-      <button
-        type="button"
-        class="mobile-nav__close"
-        aria-label="Close navigation"
-      >
-        &times;
-      </button>
-
-    </div>
-
-
-    <!-- Mobile links -->
-
-    <nav
-      class="mobile-nav__links"
-      aria-label="Mobile navigation"
-    >
-
-      <a href="index.html">
-        Home
-      </a>
-
-      <a href="about.html">
-        About us
-      </a>
-
-      <a href="brands.html">
-        Brands
-      </a>
-
-      <a href="business.html">
-        Business
-      </a>
-
-      <a href="quality.html">
-        Quality &amp; Safety
-      </a>
-
-      <a href="sustainability.html">
-        Sustainability
-      </a>
-
-      <a href="news.html">
-        News &amp; Insights
-      </a>
-
-      <a href="careers.html">
-        Careers
-      </a>
-
-      <a href="contact.html">
-        Contact
-      </a>
 
     </nav>
 
+
+    <!-- =========================
+         COUNTRY MENU
+    ========================== -->
+
+    <div
+      class="country-menu"
+      id="country-menu"
+      aria-hidden="true"
+    >
+
+      <div class="country-menu__header">
+
+        <span>
+          GHAM Global Sites
+        </span>
+
+        <button
+          class="country-menu__close"
+          type="button"
+          aria-label="Close country menu"
+          data-country-close
+        >
+          ×
+        </button>
+
+      </div>
+
+      <div class="country-menu__body">
+
+        <a href="#">
+          Ghana
+        </a>
+
+        <a href="#">
+          West Africa
+        </a>
+
+        <a href="#">
+          International
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         MOBILE NAVIGATION
+    ========================== -->
+
+    <div
+      class="mobile-nav"
+      id="mobile-navigation"
+      aria-hidden="true"
+    >
+
+      <div class="mobile-nav__inner">
+
+        <div class="mobile-nav__header">
+
+          <a
+            class="mobile-nav__logo"
+            href="index.html"
+          >
+
+            <img
+              src="assets/images/gham-logo.svg"
+              alt="GHAM Ghana Limited"
+            >
+
+          </a>
+
+          <button
+            class="mobile-nav__close"
+            type="button"
+            aria-label="Close navigation"
+            data-mobile-close
+          >
+            ×
+          </button>
+
+        </div>
+
+
+        <nav
+          class="mobile-nav__links"
+          aria-label="Mobile navigation"
+        >
+
+          <a href="about.html">
+            About us
+          </a>
+
+          <a href="brands.html">
+            Our Brands
+          </a>
+
+          <a href="business.html">
+            Our Business
+          </a>
+
+          <a href="products.html">
+            Products
+          </a>
+
+          <a href="quality.html">
+            Quality &amp; Safety
+          </a>
+
+          <a href="sustainability.html">
+            Sustainability
+          </a>
+
+          <a href="news.html">
+            News &amp; Insights
+          </a>
+
+          <a href="careers.html">
+            Careers
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+        </nav>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
+
+  <main>
+<section class="gham-hero" data-gham-hero>
+
+  <!-- ==========================================
+       SLIDER
+  =========================================== -->
+
+  <div class="gham-hero__viewport">
+
+    <div class="gham-hero__track" data-hero-track>
+
+
+      <!-- ========================================
+           SLIDE 01
+      ========================================= -->
+
+      <article class="gham-hero__slide">
+
+        <div class="gham-hero__image">
+
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="assets/images/hero/tea-plantation-mobile-800.webp"
+            >
+
+            <img
+              src="assets/images/hero/tea-plantation-desktop-1600.webp"
+              alt="Tea plantation workers harvesting crops"
+            >
+          </picture>
+
+        </div>
+
+
+        <div class="gham-hero__overlay"></div>
+
+
+        <div class="gham-hero__content">
+
+          <p class="gham-hero__eyebrow">
+            <span>01</span>
+            GHAM Ghana Ltd
+          </p>
+
+          <h1 class="gham-hero__title">
+            Building products
+            <br>
+            for everyday life.
+          </h1>
+
+          <p class="gham-hero__description">
+            We develop, produce and grow consumer products
+            built on quality, trust and lasting value.
+          </p>
+
+          <a
+            href="about.html"
+            class="gham-hero__button"
+          >
+            Discover GHAM
+
+            <span>
+              →
+            </span>
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ========================================
+           SLIDE 02
+      ========================================= -->
+
+      <article class="gham-hero__slide">
+
+        <div class="gham-hero__image">
+
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="assets/images/hero/slide-02-mobile-800.webp"
+            >
+
+            <img
+              src="assets/images/hero/slide-02-desktop-1600.webp"
+              alt="GHAM consumer products"
+            >
+            
+          </picture>
+
+        </div>
+
+
+        <div class="gham-hero__overlay"></div>
+
+
+        <div class="gham-hero__content">
+
+          <p class="gham-hero__eyebrow">
+            <span>02</span>
+            Our Brands
+          </p>
+
+          <h2 class="gham-hero__title">
+            Brands made
+            <br>
+            for everyday life.
+          </h2>
+
+          <p class="gham-hero__description">
+            A growing portfolio of consumer brands created
+            with care for the moments that matter.
+          </p>
+
+          <a
+            href="brands.html"
+            class="gham-hero__button"
+          >
+            Explore our brands
+
+            <span>
+              →
+            </span>
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ========================================
+           SLIDE 03
+      ========================================= -->
+
+      <article class="gham-hero__slide">
+
+        <div class="gham-hero__image">
+
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="assets/images/hero/dairy-milking-mobile-800.webp"
+            >
+
+            <img
+              src="assets/images/hero/dairy-milking-desktop-1600.webp"
+              alt="Agricultural production"
+            >
+
+          </picture>
+
+        </div>
+
+
+        <div class="gham-hero__overlay"></div>
+
+
+        <div class="gham-hero__content">
+
+          <p class="gham-hero__eyebrow">
+            <span>03</span>
+            Our Business
+          </p>
+
+          <h2 class="gham-hero__title">
+            From product idea
+            <br>
+            to market.
+          </h2>
+
+          <p class="gham-hero__description">
+            From product development and production to
+            distribution and market expansion.
+          </p>
+
+          <a
+            href="business.html"
+            class="gham-hero__button"
+          >
+            Our business
+
+            <span>
+              →
+            </span>
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ========================================
+           SLIDE 04
+      ========================================= -->
+
+      <article class="gham-hero__slide">
+
+        <div class="gham-hero__image">
+
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="assets/images/hero/highland-cattle-mobile-800.webp"
+            >
+
+            <img
+              src="assets/images/hero/highland-cattle-desktop-1600.webp"
+              alt="Agricultural landscape representing responsible growth"
+            >
+
+          </picture>
+
+        </div>
+
+
+        <div class="gham-hero__overlay"></div>
+
+
+        <div class="gham-hero__content">
+
+          <p class="gham-hero__eyebrow">
+            <span>04</span>
+            Growth &amp; Purpose
+          </p>
+
+          <h2 class="gham-hero__title">
+            Growing with
+            <br>
+            purpose.
+          </h2>
+
+          <p class="gham-hero__description">
+            Responsible growth, uncompromising quality and
+            investment in people, partners and communities.
+          </p>
+
+          <a
+            href="sustainability.html"
+            class="gham-hero__button"
+          >
+            Our approach
+
+            <span>
+              →
+            </span>
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
   </div>
 
-</div>
+
+
+  <!-- ==========================================
+       CONTROLS
+  =========================================== -->
+
+  <div class="gham-hero__controls">
+
+    <div class="gham-hero__controls-inner">
+
+
+      <div class="gham-hero__progress">
+
+        <span
+          class="gham-hero__current"
+          data-hero-current
+        >
+          01
+        </span>
+
+
+        <div class="gham-hero__bars">
+
+          <button
+            type="button"
+            data-hero-go="0"
+            aria-label="Go to slide 1"
+          >
+            <span></span>
+          </button>
+
+          <button
+            type="button"
+            data-hero-go="1"
+            aria-label="Go to slide 2"
+          >
+            <span></span>
+          </button>
+
+          <button
+            type="button"
+            data-hero-go="2"
+            aria-label="Go to slide 3"
+          >
+            <span></span>
+          </button>
+
+          <button
+            type="button"
+            data-hero-go="3"
+            aria-label="Go to slide 4"
+          >
+            <span></span>
+          </button>
+
+        </div>
+
+
+        <span class="gham-hero__total">
+          04
+        </span>
+
+      </div>
 
 
 
-<!-- =========================================================
-     SEARCH OVERLAY
-========================================================= -->
+      <div class="gham-hero__actions">
 
-<div
-  id="search-overlay"
-  class="search-overlay"
-  aria-hidden="true"
->
-
-  <div class="search-overlay__inner">
-
-    <button
-      type="button"
-      class="search-overlay__close"
-      aria-label="Close search"
-    >
-      &times;
-    </button>
+        <button
+          type="button"
+          class="gham-hero__control"
+          data-hero-play
+          aria-label="Pause slideshow"
+        >
+          <span class="hero-pause">Ⅱ</span>
+          <span class="hero-play">▶</span>
+        </button>
 
 
-    <div class="search-overlay__content">
+        <button
+          type="button"
+          class="gham-hero__control"
+          data-hero-prev
+          aria-label="Previous slide"
+        >
+          ←
+        </button>
+
+
+        <button
+          type="button"
+          class="gham-hero__control"
+          data-hero-next
+          aria-label="Next slide"
+        >
+          →
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+  </main>
+
+
+  <!-- =====================================================
+       SEARCH OVERLAY
+  ====================================================== -->
+
+  <div
+    class="search-overlay"
+    data-search-overlay
+    aria-hidden="true"
+  >
+
+    <div class="search-overlay__inner">
+
+      <button
+        class="search-overlay__close"
+        type="button"
+        aria-label="Close search"
+        data-search-close
+      >
+        ×
+      </button>
 
       <span class="search-overlay__label">
         Search GHAM
@@ -670,7 +986,8 @@
 
       <form
         class="search-form"
-        role="search"
+        action="search.html"
+        method="get"
       >
 
         <input
@@ -679,7 +996,7 @@
           placeholder="What are you looking for?"
           autocomplete="off"
           aria-label="Search GHAM"
-        />
+        >
 
         <button
           type="submit"
@@ -687,27 +1004,25 @@
         >
 
           <svg
-            width="26"
-            height="26"
-            viewBox="0 0 26 26"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"
           >
 
             <circle
               cx="11"
               cy="11"
-              r="7"
+              r="6.5"
               stroke="currentColor"
               stroke-width="1.5"
             />
 
             <path
-              d="M16.5 16.5L23 23"
+              d="M16 16L21 21"
               stroke="currentColor"
               stroke-width="1.5"
-              stroke-linecap="round"
             />
 
           </svg>
@@ -720,284 +1035,10 @@
 
   </div>
 
-</div>
 
-  <main id="main" tabindex="-1">
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+  <script src="js/hero.js"></script>
 
-    <!-- ============ Hero carousel ============
-      HOW TO REPLACE MEDIA (per slide, inside .hero-slide__media):
-        • Desktop image  → <img> src / srcset   (16:9, export 1600w + 2400w)
-        • Mobile image   → <source media=...>   (8:9 portrait crop, export 800w + 1200w)
-        • Alt text       → <img alt="...">       (describe the photo; "" only if purely decorative)
-        • Focal point    → style="--focus: 60% 40%" on .hero-slide__media (object-position)
-        • Optional video → data-video="assets/videos/hero-01.mp4" on .hero-slide__media
-                           (muted loop; the image stays as poster + fallback, and is used
-                            for reduced-motion / data-saver visitors)
-      Slide 1 loads eagerly (it's the LCP image). Slides 2–4 use data-src / data-srcset
-      and are loaded by JS just before they're needed — keep that pattern when swapping.
-    -->
-    <section class="hero" aria-roledescription="carousel" aria-label="GHAM highlights" data-hero>
-      <h1 class="visually-hidden">GHAM Ghana Ltd — consumer goods and brand building</h1>
-
-      <div class="hero-slides" id="hero-slides" aria-live="off" data-hero-slides>
-
-        <!-- 01 — GHAM -->
-        <article class="hero-slide is-active" id="hero-slide-1" role="group" aria-roledescription="slide" aria-label="1 of 4: GHAM" data-hero-slide>
-          <div class="hero-slide__media">
-            <picture>
-              <source media="(max-width: 47.99em)" sizes="100vw"
-                      srcset="assets/images/hero/tea-plantation-mobile-800.webp 800w">
-              <img src="assets/images/hero/tea-plantation-desktop-1600.webp"
-                   srcset="assets/images/hero/tea-plantation-desktop-1600.webp 1600w"
-                   sizes="100vw" width="1600" height="900" fetchpriority="high" decoding="async"
-                   alt="Workers harvesting tea among rows of terraced tea bushes on a hillside">
-            </picture>
-          </div>
-          <div class="hero-slide__body">
-            <div class="hero-slide__content" data-hero-hover>
-              <p class="hero-eyebrow"><span class="hero-eyebrow__num">01</span>GHAM Ghana Ltd</p>
-              <h2 class="hero-title">
-                <span class="hero-title__line"><span>Building Brands.</span></span>
-                <span class="hero-title__line"><span>Creating Value.</span></span>
-              </h2>
-              <p class="hero-copy">GHAM is a consumer-goods and brand-building company. We develop, produce and grow brands built on quality, trust and lasting value.</p>
-              <a class="hero-cta" href="about.html">Discover GHAM<svg class="hero-cta__arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
-            </div>
-          </div>
-        </article>
-
-        <!-- 02 — Our Brands -->
-        <article class="hero-slide" id="hero-slide-2" role="group" aria-roledescription="slide" aria-label="2 of 4: Our Brands" data-hero-slide>
-          <div class="hero-slide__media">
-            <picture>
-              <source media="(max-width: 47.99em)" sizes="100vw"
-                      data-srcset="assets/images/hero/slide-02-mobile-800.webp 800w, assets/images/hero/slide-02-mobile-1200.webp 1200w">
-              <img data-src="assets/images/hero/slide-02-desktop-1600.webp"
-                   data-srcset="assets/images/hero/slide-02-desktop-1600.webp 1600w, assets/images/hero/slide-02-desktop-2400.webp 2400w"
-                   sizes="100vw" width="1600" height="900" decoding="async"
-                   alt="Placeholder image: Amandah and GHAM brand products">
-            </picture>
-          </div>
-          <div class="hero-slide__body">
-            <div class="hero-slide__content" data-hero-hover>
-              <p class="hero-eyebrow"><span class="hero-eyebrow__num">02</span>Our Brands</p>
-              <h2 class="hero-title">
-                <span class="hero-title__line"><span>Brands Made for</span></span>
-                <span class="hero-title__line"><span>Everyday Life.</span></span>
-              </h2>
-              <p class="hero-copy">A growing portfolio of consumer brands, led by Amandah, made with care for the moments that matter every day.</p>
-              <a class="hero-cta" href="brands.html">Explore Our Brands<svg class="hero-cta__arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
-            </div>
-          </div>
-        </article>
-
-        <!-- 03 — Our Business -->
-        <article class="hero-slide" id="hero-slide-3" role="group" aria-roledescription="slide" aria-label="3 of 4: Our Business" data-hero-slide>
-          <div class="hero-slide__media">
-            <picture>
-              <source media="(max-width: 47.99em)" sizes="100vw"
-                      data-srcset="assets/images/hero/dairy-milking-mobile-800.webp 800w">
-              <img data-src="assets/images/hero/dairy-milking-desktop-1600.webp"
-                   data-srcset="assets/images/hero/dairy-milking-desktop-1600.webp 1600w"
-                   sizes="100vw" width="1600" height="900" decoding="async"
-                   alt="Hands milking a cow by hand into an enamel jug">
-            </picture>
-          </div>
-          <div class="hero-slide__body">
-            <div class="hero-slide__content" data-hero-hover>
-              <p class="hero-eyebrow"><span class="hero-eyebrow__num">03</span>Our Business</p>
-              <h2 class="hero-title">
-                <span class="hero-title__line"><span>From Product Idea</span></span>
-                <span class="hero-title__line"><span>to Market.</span></span>
-              </h2>
-              <p class="hero-copy">Brand and product development, operations, distribution and market expansion: we manage every step that takes a product from idea to shelf.</p>
-              <a class="hero-cta" href="business.html">Our Business<svg class="hero-cta__arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
-            </div>
-          </div>
-        </article>
-
-        <!-- 04 — Growth & Purpose -->
-        <article class="hero-slide" id="hero-slide-4" role="group" aria-roledescription="slide" aria-label="4 of 4: Growth and Purpose" data-hero-slide>
-          <div class="hero-slide__media">
-            <picture>
-              <source media="(max-width: 47.99em)" sizes="100vw"
-                      data-srcset="assets/images/hero/highland-cattle-mobile-800.webp 800w">
-              <img data-src="assets/images/hero/highland-cattle-desktop-1600.webp"
-                   data-srcset="assets/images/hero/highland-cattle-desktop-1600.webp 1600w"
-                   sizes="100vw" width="1600" height="900" decoding="async"
-                   alt="Two Highland cattle walking across a misty farm pasture">
-            </picture>
-          </div>
-          <div class="hero-slide__body">
-            <div class="hero-slide__content" data-hero-hover>
-              <p class="hero-eyebrow"><span class="hero-eyebrow__num">04</span>Growth &amp; Purpose</p>
-              <h2 class="hero-title">
-                <span class="hero-title__line"><span>Growing with</span></span>
-                <span class="hero-title__line"><span>Purpose.</span></span>
-              </h2>
-              <p class="hero-copy">Responsible growth, uncompromising quality and investment in our people and partners, building value that lasts.</p>
-              <a class="hero-cta" href="sustainability.html">Our Approach<svg class="hero-cta__arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
-            </div>
-          </div>
-        </article>
-
-      </div>
-
-      <!-- Controls (hidden without JS — slide 1 then stands alone) -->
-      <div class="hero-controls" data-hero-controls data-hero-hover>
-        <div class="hero-controls__inner">
-          <div class="hero-progress">
-            <span class="hero-count" aria-hidden="true"><span class="hero-count__current" data-hero-count>01</span></span>
-            <ol class="hero-progress__track" role="list">
-              <li><button class="hero-progress__seg" type="button" aria-label="Go to slide 1: GHAM" aria-controls="hero-slide-1" data-hero-goto="0"><span class="hero-progress__fill"></span></button></li>
-              <li><button class="hero-progress__seg" type="button" aria-label="Go to slide 2: Our Brands" aria-controls="hero-slide-2" data-hero-goto="1"><span class="hero-progress__fill"></span></button></li>
-              <li><button class="hero-progress__seg" type="button" aria-label="Go to slide 3: Our Business" aria-controls="hero-slide-3" data-hero-goto="2"><span class="hero-progress__fill"></span></button></li>
-              <li><button class="hero-progress__seg" type="button" aria-label="Go to slide 4: Growth and Purpose" aria-controls="hero-slide-4" data-hero-goto="3"><span class="hero-progress__fill"></span></button></li>
-            </ol>
-            <span class="hero-count hero-count--total" aria-hidden="true">04</span>
-          </div>
-
-          <div class="hero-buttons">
-            <button class="hero-btn" type="button" aria-label="Pause slideshow" data-hero-toggle>
-              <svg class="hero-btn__pause" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10M13 5v10"/></svg>
-              <svg class="hero-btn__play" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4.5v11l8.5-5.5z"/></svg>
-            </button>
-            <button class="hero-btn" type="button" aria-label="Previous slide" aria-controls="hero-slides" data-hero-prev>
-              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M17 10H4M9 5l-5 5 5 5"/></svg>
-            </button>
-            <button class="hero-btn" type="button" aria-label="Next slide" aria-controls="hero-slides" data-hero-next>
-              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-     SECTION 02 — WHO WE ARE
-========================================================= -->
-<!-- =========================================================
-     SECTION 02 — WHO WE ARE
-========================================================= -->
-    <section class="gham-who" id="about">
-
-      <div class="gham-who__inner">
-
-        <!-- LEFT — IMAGE COMPOSITION -->
-        <div class="gham-who__visual">
-
-          <!-- Main image -->
-          <div class="gham-who__image gham-who__image--main">
-            <img
-              src="pics/Amandah5.png"
-              alt="GHAM Ghana Limited products and people"
-              loading="lazy"
-            />
-          </div>
-
-          <!-- Small image -->
-          <div class="gham-who__image gham-who__image--small">
-            <img
-              src="pics/gham-product.jpg"
-              alt="GHAM Ghana Limited product"
-              loading="lazy"
-            />
-          </div>
-
-          <!-- Quality card -->
-          <div class="gham-who__quality">
-            <span class="gham-who__quality-label">GHAM</span>
-
-            <strong>QUALITY</strong>
-
-            <span class="gham-who__quality-copy">
-              Products made with care and consistency.
-            </span>
-          </div>
-
-          <!-- Floating decorative circle -->
-          <div class="gham-who__orb" aria-hidden="true"></div>
-
-        </div>
-
-
-        <!-- RIGHT — CONTENT -->
-        <div class="gham-who__content">
-
-          <div class="gham-who__eyebrow">
-            <span class="gham-who__eyebrow-line"></span>
-            <span>Who We Are</span>
-          </div>
-
-          <h2 class="gham-who__title">
-            Creating products for
-            <span>everyday life.</span>
-          </h2>
-
-          <p class="gham-who__text">
-            We are a consumer goods company creating products for everyday life.
-            Through our commitment to quality, innovation and care, we create
-            products people can trust and enjoy, while creating lasting value
-            for consumers, partners and communities.
-          </p>
-
-          <a href="about.html" class="gham-who__cta">
-            <span>Discover GHAM</span>
-
-            <span class="gham-who__cta-arrow" aria-hidden="true">
-              <svg
-                viewBox="0 0 20 20"
-                width="20"
-                height="20"
-                fill="none"
-              >
-                <path
-                  d="M4 10H15"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M10.5 5.5L15 10L10.5 14.5"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </span>
-          </a>
-
-
-          <!-- Capability strip -->
-          <div class="gham-who__capabilities">
-
-            <div class="gham-who__capability">
-              <span>01</span>
-              <strong>Quality</strong>
-            </div>
-
-            <div class="gham-who__capability">
-              <span>02</span>
-              <strong>Product Development</strong>
-            </div>
-
-            <div class="gham-who__capability">
-              <span>03</span>
-              <strong>Market Growth</strong>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-  </main>
-
-
-  <script src="js/whoweare.js"></script>
-  <script src="js/nav.js"></script>
 </body>
 </html>
