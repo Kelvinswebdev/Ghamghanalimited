@@ -3,103 +3,158 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!carousel) return;
 
-  const slides = carousel.querySelectorAll(
-    ".premium-carousel__slide"
+  const slides = Array.from(
+    carousel.querySelectorAll(".premium-carousel__slide")
   );
 
-  const nextButton = carousel.querySelector(
-    ".premium-carousel__next"
-  );
-
-  const prevButton = carousel.querySelector(
-    ".premium-carousel__prev"
-  );
-
-  const progressBar = carousel.querySelector(
-    ".premium-carousel__progress-bar"
-  );
-
+  const nextButton = carousel.querySelector(".premium-carousel__next");
+  const prevButton = carousel.querySelector(".premium-carousel__prev");
+  const progressBar = carousel.querySelector(".premium-carousel__progress-bar");
   const currentNumber = carousel.querySelector(
     ".premium-carousel__number span:first-child"
   );
 
-  let current = 0;
-  let timer;
+  if (slides.length < 2) return;
 
-  const duration = 6000;
+  let currentSlide = 0;
+  let autoplayTimer = null;
+
+  const slideDuration = 4000;
+
+
+  /* ================================
+     SHOW SLIDE
+  ================================= */
 
   function showSlide(index) {
+
     slides.forEach((slide, i) => {
       slide.classList.toggle("is-active", i === index);
     });
 
-    current = index;
+    currentSlide = index;
+
+    /* Counter */
 
     if (currentNumber) {
-      currentNumber.textContent = String(current + 1).padStart(2, "0");
+      currentNumber.textContent =
+        String(index + 1).padStart(2, "0");
     }
 
-    // Restart progress animation
+    /* Progress bar */
+
     if (progressBar) {
+
       progressBar.style.transition = "none";
       progressBar.style.width = "0%";
 
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          progressBar.style.transition =
-            `width ${duration}ms linear`;
+      // Force browser repaint
+      progressBar.offsetWidth;
 
-          progressBar.style.width = "100%";
-        });
-      });
+      progressBar.style.transition =
+        `width ${slideDuration}ms linear`;
+
+      progressBar.style.width = "100%";
     }
   }
 
+
+  /* ================================
+     NEXT SLIDE
+  ================================= */
+
   function nextSlide() {
-    const next = (current + 1) % slides.length;
-    showSlide(next);
-    restartTimer();
+
+    const nextIndex =
+      (currentSlide + 1) % slides.length;
+
+    showSlide(nextIndex);
   }
+
+
+  /* ================================
+     PREVIOUS SLIDE
+  ================================= */
 
   function previousSlide() {
-    const previous =
-      (current - 1 + slides.length) % slides.length;
 
-    showSlide(previous);
-    restartTimer();
+    const previousIndex =
+      (currentSlide - 1 + slides.length) %
+      slides.length;
+
+    showSlide(previousIndex);
   }
 
-  function restartTimer() {
-    clearInterval(timer);
 
-    timer = setInterval(() => {
-      const next = (current + 1) % slides.length;
-      showSlide(next);
-    }, duration);
+  /* ================================
+     START AUTOPLAY
+  ================================= */
+
+  function startAutoplay() {
+
+    clearInterval(autoplayTimer);
+
+    autoplayTimer = setInterval(() => {
+      nextSlide();
+    }, slideDuration);
   }
 
-  nextButton?.addEventListener("click", nextSlide);
-  prevButton?.addEventListener("click", previousSlide);
 
-  // Pause while hovering
-  carousel.addEventListener("mouseenter", () => {
-    clearInterval(timer);
+  /* ================================
+     BUTTON CONTROLS
+  ================================= */
+
+  nextButton?.addEventListener("click", () => {
+
+    nextSlide();
+
+    // Restart the 6-second countdown
+    startAutoplay();
+
   });
 
-  carousel.addEventListener("mouseleave", restartTimer);
 
-  // Keyboard navigation
+  prevButton?.addEventListener("click", () => {
+
+    previousSlide();
+
+    // Restart the 6-second countdown
+    startAutoplay();
+
+  });
+
+
+  /* ================================
+     KEYBOARD
+  ================================= */
+
   carousel.addEventListener("keydown", (event) => {
+
     if (event.key === "ArrowRight") {
+
       nextSlide();
+      startAutoplay();
+
     }
 
     if (event.key === "ArrowLeft") {
+
       previousSlide();
+      startAutoplay();
+
     }
+
   });
 
-  // Start
+
+  /* ================================
+     INITIALIZE
+  ================================= */
+
   showSlide(0);
-  restartTimer();
+
+  // IMPORTANT:
+  // Start autoplay immediately on page load.
+  startAutoplay();
+
 });
