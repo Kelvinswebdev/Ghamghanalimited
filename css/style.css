@@ -1277,1748 +1277,389 @@ span:last-child {
   touch-action: pan-y;
 }
 
+/* The styling  for the Hero section begins here */
 
 /* =========================================================
-   HERO SLIDES
+   PREMIUM HERO CAROUSEL
 ========================================================= */
 
-.hero-slides {
-  position: absolute;
-
-  inset: 0;
-}
-
-.hero-slide {
-  position: absolute;
-
-  inset: 0;
-
-  opacity: 0;
-
-  visibility: hidden;
-
-  pointer-events: none;
-}
-
-.hero-slide.is-active {
-  opacity: 1;
-
-  visibility: visible;
-
-  pointer-events: auto;
-
-  z-index: 2;
-}
-
-
-/* =========================================================
-   HERO MEDIA
-========================================================= */
-
-.hero-slide__media {
-  position: absolute;
-
-  inset: 0;
-
+.premium-carousel {
+  position: relative;
+  width: 100%;
+  height: min(78vh, 52rem);
+  min-height: 38rem;
   overflow: hidden;
-
-  background:
-    var(--navy-deep);
+  background: #16181b;
+  color: #fff;
 }
 
-.hero-slide__media picture {
-  display: block;
-
+.premium-carousel__track {
+  position: relative;
   width: 100%;
   height: 100%;
 }
 
-.hero-slide__media img {
+/* ---------------------------------------------------------
+   SLIDES
+--------------------------------------------------------- */
+
+.premium-carousel__slide {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0;
+  visibility: hidden;
+
+  overflow: hidden;
+
+  transition:
+    opacity 1.1s cubic-bezier(0.77, 0, 0.175, 1),
+    visibility 1.1s ease;
+}
+
+.premium-carousel__slide.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Image */
+
+.premium-carousel__slide img {
+  position: absolute;
+  inset: 0;
+
   width: 100%;
   height: 100%;
 
   object-fit: cover;
 
-  object-position:
-    center center;
-
-  transform:
-    scale(1.08);
+  transform: scale(1.08);
 
   transition:
-    transform 1800ms var(--ease-out);
+    transform 6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+.premium-carousel__slide.is-active img {
+  transform: scale(1);
+}
 
-/* =========================================================
-   HERO OVERLAY
-========================================================= */
+/* ---------------------------------------------------------
+   DARK CINEMATIC OVERLAY
+--------------------------------------------------------- */
 
-.hero-slide__media::before {
-  content: "";
-
+.premium-carousel__overlay {
   position: absolute;
-
   inset: 0;
-
-  z-index: 1;
 
   background:
     linear-gradient(
       90deg,
-      rgba(28,29,58,0.9) 0%,
-      rgba(28,29,58,0.7) 25%,
-      rgba(28,29,58,0.3) 55%,
-      rgba(28,29,58,0.04) 82%,
-      transparent 100%
+      rgba(12, 14, 20, 0.82) 0%,
+      rgba(12, 14, 20, 0.55) 35%,
+      rgba(12, 14, 20, 0.12) 75%,
+      rgba(12, 14, 20, 0.18) 100%
     );
+
+  pointer-events: none;
 }
 
-.hero-slide__media::after {
-  content: "";
+/* ---------------------------------------------------------
+   CONTENT
+--------------------------------------------------------- */
 
+.premium-carousel__content {
   position: absolute;
 
-  inset: 0;
+  left: clamp(1.5rem, 7vw, 8rem);
+  bottom: clamp(4rem, 11vh, 8rem);
 
-  z-index: 1;
+  width: min(38rem, 80vw);
 
-  background:
-    linear-gradient(
-      0deg,
-      rgba(28,29,58,0.72) 0%,
-      transparent 55%
-    );
+  z-index: 3;
 }
 
+.premium-carousel__eyebrow {
+  display: block;
 
-/* =========================================================
-   HERO CONTENT
-========================================================= */
+  margin-bottom: 1.5rem;
 
-.hero-slide__body {
-  position: relative;
+  color: #caa562;
 
-  z-index: 4;
+  font-size: 0.68rem;
+  font-weight: 600;
 
-  width:
-    min(
-      calc(100% - (var(--gutter) * 2)),
-      var(--container)
-    );
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 
-  height: 100%;
+  opacity: 0;
+  transform: translateY(1.5rem);
 
-  margin-inline: auto;
-
-  display: flex;
-
-  align-items: flex-end;
-
-  padding:
-    7rem
-    0
-    calc(
-      var(--hero-controls-height)
-      + 4rem
-    );
+  transition:
+    opacity 700ms ease 250ms,
+    transform 900ms cubic-bezier(0.23, 1, 0.32, 1) 250ms;
 }
 
-.hero-slide__content {
-  max-width:
-    47rem;
+.premium-carousel__content h2 {
+  margin: 0;
+
+  font-size: clamp(3rem, 6.5vw, 7rem);
+  line-height: 0.92;
+
+  font-weight: 500;
+  letter-spacing: -0.055em;
+
+  opacity: 0;
+  transform: translateY(2rem);
+
+  transition:
+    opacity 900ms ease 350ms,
+    transform 1s cubic-bezier(0.23, 1, 0.32, 1) 350ms;
 }
 
+.premium-carousel__content p {
+  max-width: 30rem;
 
-/* =========================================================
-   HERO EYEBROW
-========================================================= */
+  margin: 1.8rem 0 0;
 
-.hero-eyebrow {
-  display: flex;
+  color: rgba(255, 255, 255, 0.72);
 
-  align-items: center;
+  font-size: 0.95rem;
+  line-height: 1.7;
 
-  margin:
-    0 0 1.4rem;
+  opacity: 0;
+  transform: translateY(1.5rem);
 
-  color:
-    var(--gold);
-
-  font-size:
-    0.7rem;
-
-  font-weight:
-    600;
-
-  letter-spacing:
-    0.18em;
-
-  text-transform:
-    uppercase;
+  transition:
+    opacity 800ms ease 500ms,
+    transform 900ms cubic-bezier(0.23, 1, 0.32, 1) 500ms;
 }
 
-.hero-eyebrow__num {
+/* Animate content when active */
+
+.premium-carousel__slide.is-active
+.premium-carousel__eyebrow,
+.premium-carousel__slide.is-active
+.premium-carousel__content h2,
+.premium-carousel__slide.is-active
+.premium-carousel__content p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------------------------------------------------------
+   LINK
+--------------------------------------------------------- */
+
+.premium-carousel__link {
   display: inline-flex;
 
   align-items: center;
+  gap: 1rem;
 
-  gap: 0.7rem;
+  margin-top: 2rem;
 
-  margin-right:
-    0.7rem;
-}
+  padding-bottom: 0.6rem;
 
-.hero-eyebrow__num::after {
-  content: "";
-
-  width: 2rem;
-  height: 1px;
-
-  background:
-    currentColor;
-}
-
-
-/* =========================================================
-   HERO TITLE
-========================================================= */
-
-.hero-title {
-  max-width:
-    10ch;
-
-  margin: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.5);
 
   color: #fff;
 
-  font-size:
-    clamp(
-      3.5rem,
-      6.2vw,
-      6.6rem
-    );
+  font-size: 0.78rem;
+  font-weight: 500;
 
-  font-weight:
-    500;
-
-  line-height:
-    0.94;
-
-  letter-spacing:
-    -0.06em;
-}
-
-.hero-title__line {
-  display: block;
-
-  overflow: hidden;
-
-  padding-bottom:
-    0.08em;
-}
-
-.hero-title__line span {
-  display: inline-block;
-
-  transform:
-    translateY(110%);
-}
-
-
-/* =========================================================
-   HERO COPY
-========================================================= */
-
-.hero-copy {
-  max-width:
-    36rem;
-
-  margin:
-    1.8rem 0 0;
-
-  color:
-    rgba(255,255,255,0.82);
-
-  font-size:
-    clamp(
-      0.95rem,
-      0.9rem + 0.2vw,
-      1.08rem
-    );
-
-  line-height:
-    1.65;
+  letter-spacing: 0.04em;
 
   opacity: 0;
-
-  transform:
-    translateY(1rem);
-}
-
-
-/* =========================================================
-   HERO CTA
-========================================================= */
-
-.hero-cta {
-  min-height:
-    3.4rem;
-
-  display:
-    inline-flex;
-
-  align-items:
-    center;
-
-  gap:
-    0.9rem;
-
-  margin-top:
-    2rem;
-
-  padding:
-    0 1.4rem
-    0 1.5rem;
-
-  background:
-    #fff;
-
-  color:
-    var(--navy-deep);
-
-  font-size:
-    0.78rem;
-
-  font-weight:
-    600;
-
-  opacity:
-    0;
-
-  transform:
-    translateY(1rem);
+  transform: translateY(1rem);
 
   transition:
-    background 250ms ease,
-    color 250ms ease;
+    opacity 700ms ease 650ms,
+    transform 800ms cubic-bezier(0.23, 1, 0.32, 1) 650ms,
+    border-color 250ms ease;
 }
 
-.hero-cta:hover {
-  background:
-    var(--gold);
-
-  color:
-    var(--navy-deep);
+.premium-carousel__slide.is-active
+.premium-carousel__link {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.hero-cta__arrow {
-  width:
-    1.1rem;
-
-  height:
-    1.1rem;
-
-  fill:
-    none;
-
-  stroke:
-    currentColor;
-
-  stroke-width:
-    1.5;
+.premium-carousel__link span {
+  font-size: 1.1rem;
 
   transition:
-    transform
-    350ms
-    var(--ease-out);
+    transform 300ms ease;
 }
 
-.hero-cta:hover
-.hero-cta__arrow {
-  transform:
-    translateX(0.3rem);
+.premium-carousel__link:hover {
+  border-color: #caa562;
 }
 
-
-/* =========================================================
-   HERO ACTIVE ANIMATION
-========================================================= */
-
-.hero-slide.is-active
-.hero-slide__media img {
-  transform:
-    scale(1.02);
+.premium-carousel__link:hover span {
+  transform: translateX(0.35rem);
 }
 
-.hero-slide.is-active
-.hero-title__line:nth-child(1) span {
-  transform:
-    translateY(0);
+/* ---------------------------------------------------------
+   SLIDE NUMBER
+--------------------------------------------------------- */
 
-  transition:
-    transform
-    900ms
-    var(--ease-out)
-    350ms;
-}
-
-.hero-slide.is-active
-.hero-title__line:nth-child(2) span {
-  transform:
-    translateY(0);
-
-  transition:
-    transform
-    900ms
-    var(--ease-out)
-    450ms;
-}
-
-.hero-slide.is-active
-.hero-eyebrow {
-  animation:
-    heroFadeUp
-    700ms
-    var(--ease-out)
-    200ms
-    forwards;
-}
-
-.hero-slide.is-active
-.hero-copy {
-  animation:
-    heroFadeUp
-    700ms
-    var(--ease-out)
-    600ms
-    forwards;
-}
-
-.hero-slide.is-active
-.hero-cta {
-  animation:
-    heroFadeUp
-    700ms
-    var(--ease-out)
-    750ms
-    forwards;
-}
-
-@keyframes heroFadeUp {
-
-  from {
-    opacity: 0;
-
-    transform:
-      translateY(1.25rem);
-  }
-
-  to {
-    opacity: 1;
-
-    transform:
-      translateY(0);
-  }
-
-}
-
-
-/* =========================================================
-   HERO CONTROLS
-========================================================= */
-
-.hero-controls {
+.premium-carousel__number {
   position: absolute;
 
-  left: 0;
-  right: 0;
-  bottom: 0;
+  right: clamp(1.5rem, 5vw, 5rem);
+  bottom: 3rem;
 
-  z-index: 10;
-}
-
-.hero-controls__inner {
-  position: relative;
-
-  width:
-    min(
-      calc(100% - (var(--gutter) * 2)),
-      var(--container)
-    );
-
-  height:
-    var(--hero-controls-height);
-
-  margin-inline: auto;
+  z-index: 5;
 
   display: flex;
-
   align-items: center;
+  gap: 0.8rem;
 
-  justify-content: space-between;
+  color: rgba(255,255,255,0.75);
 
-  gap: 2rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
 }
 
-.hero-controls__inner::before {
-  content: "";
+.premium-carousel__number i {
+  display: block;
 
-  position: absolute;
-
-  top: 0;
-  left: 0;
-  right: 0;
-
+  width: 3rem;
   height: 1px;
 
-  background:
-    rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.45);
 }
 
+/* ---------------------------------------------------------
+   CONTROLS
+--------------------------------------------------------- */
 
-/* =========================================================
-   HERO PROGRESS
-========================================================= */
+.premium-carousel__controls {
+  position: absolute;
 
-.hero-progress {
-  flex: 1;
+  right: clamp(1.5rem, 5vw, 5rem);
+  top: 50%;
 
-  max-width:
-    42rem;
+  z-index: 10;
 
-  display:
-    flex;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 
-  align-items:
-    center;
-
-  gap:
-    1rem;
+  transform: translateY(-50%);
 }
 
-.hero-count {
-  min-width:
-    1.5rem;
+.premium-carousel__controls button {
+  width: 3.25rem;
+  height: 3.25rem;
 
-  color:
-    #fff;
+  display: grid;
+  place-items: center;
 
-  font-size:
-    0.72rem;
+  border: 1px solid rgba(255,255,255,0.3);
 
-  font-weight:
-    600;
+  background: rgba(255,255,255,0.04);
 
-  font-variant-numeric:
-    tabular-nums;
-}
+  color: #fff;
 
-.hero-count--total {
-  color:
-    rgba(255,255,255,0.4);
-}
+  cursor: pointer;
 
-.hero-progress__track {
-  flex: 1;
-
-  display:
-    grid;
-
-  grid-template-columns:
-    repeat(4, 1fr);
-
-  gap:
-    0.4rem;
-}
-
-.hero-progress__seg {
-  position:
-    relative;
-
-  width:
-    100%;
-
-  height:
-    2rem;
-
-  padding:
-    0;
-
-  background:
-    transparent;
-
-  cursor:
-    pointer;
-}
-
-.hero-progress__seg::before {
-  content:
-    "";
-
-  position:
-    absolute;
-
-  top:
-    50%;
-
-  left:
-    0;
-
-  right:
-    0;
-
-  height:
-    2px;
-
-  background:
-    rgba(255,255,255,0.25);
-
-  transform:
-    translateY(-50%);
-}
-
-.hero-progress__fill {
-  position:
-    absolute;
-
-  top:
-    50%;
-
-  left:
-    0;
-
-  width:
-    100%;
-
-  height:
-    2px;
-
-  background:
-    var(--gold);
-
-  transform:
-    translateY(-50%)
-    scaleX(0);
-
-  transform-origin:
-    left center;
-}
-
-.hero-progress__seg.is-done
-.hero-progress__fill {
-  transform:
-    translateY(-50%)
-    scaleX(1);
-}
-
-.hero-progress__seg.is-current
-.hero-progress__fill {
-  animation:
-    heroProgress
-    var(--hero-interval)
-    linear
-    forwards;
-}
-
-.hero.is-paused
-.hero-progress__seg.is-current
-.hero-progress__fill {
-  animation-play-state:
-    paused;
-}
-
-@keyframes heroProgress {
-
-  from {
-    transform:
-      translateY(-50%)
-      scaleX(0);
-  }
-
-  to {
-    transform:
-      translateY(-50%)
-      scaleX(1);
-  }
-
-}
-
-
-/* =========================================================
-   HERO BUTTONS
-========================================================= */
-
-.hero-buttons {
-  display:
-    flex;
-
-  gap:
-    0.45rem;
-}
-
-.hero-btn {
-  width:
-    3.1rem;
-
-  height:
-    3.1rem;
-
-  display:
-    grid;
-
-  place-items:
-    center;
-
-  padding:
-    0;
-
-  background:
-    rgba(28,29,58,0.25);
-
-  border:
-    1px solid
-    rgba(255,255,255,0.3);
-
-  color:
-    #fff;
-
-  cursor:
-    pointer;
-
-  backdrop-filter:
-    blur(10px);
+  backdrop-filter: blur(8px);
 
   transition:
     background 250ms ease,
     border-color 250ms ease,
-    transform 300ms var(--ease-out);
+    transform 250ms ease;
 }
 
-.hero-btn:hover {
-  background:
-    rgba(255,255,255,0.13);
+.premium-carousel__controls button:hover {
+  background: rgba(255,255,255,0.12);
 
-  border-color:
-    rgba(255,255,255,0.7);
+  border-color: rgba(255,255,255,0.7);
 
-  transform:
-    translateY(-2px);
+  transform: translateX(-0.2rem);
 }
 
-.hero-btn svg {
-  width:
-    1rem;
+/* ---------------------------------------------------------
+   PROGRESS
+--------------------------------------------------------- */
 
-  height:
-    1rem;
+.premium-carousel__progress {
+  position: absolute;
 
-  fill:
-    none;
+  left: 0;
+  bottom: 0;
 
-  stroke:
-    currentColor;
+  width: 100%;
+  height: 2px;
 
-  stroke-width:
-    1.5;
+  z-index: 20;
 
-  stroke-linecap:
-    round;
-
-  stroke-linejoin:
-    round;
+  background: rgba(255,255,255,0.15);
 }
 
-.hero-btn__play {
-  display:
-    none;
+.premium-carousel__progress-bar {
+  display: block;
+
+  width: 0;
+  height: 100%;
+
+  background: #caa562;
 }
 
-.hero.is-paused
-.hero-btn__pause {
-  display:
-    none;
-}
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
 
-.hero.is-paused
-.hero-btn__play {
-  display:
-    block;
-}
+@media (max-width: 768px) {
 
-
-/* =========================================================
-   19 — TABLET
-========================================================= */
-
-@media (max-width: 60rem) {
-
-  :root {
-    --header-height:
-      4.5rem;
+  .premium-carousel {
+    height: 78vh;
+    min-height: 34rem;
   }
 
-  .main-nav {
-    display:
-      none;
-  }
-
-  .mobile-menu-toggle {
-    display:
-      block;
-  }
-
-  .header-search {
-    width:
-      auto;
-
-    border-bottom:
-      0;
-  }
-
-  .header-search__text {
-    display:
-      none;
-  }
-
-  .hero {
-    min-height:
-      calc(
-        100svh
-        - var(--header-height)
-      );
-  }
-
-  .hero-slide__body {
-    padding-bottom:
-      calc(
-        var(--hero-controls-height)
-        + 3rem
-      );
-  }
-
-  .hero-title {
-    font-size:
-      clamp(
-        3rem,
-        8vw,
-        5.5rem
-      );
-  }
-
-}
-
-
-/* =========================================================
-   20 — MOBILE NAVIGATION
-   Based on the supplied Nestlé mobile reference
-========================================================= */
-
-@media (max-width: 47.99em) {
-
-  :root {
-    --header-height:
-      4.25rem;
-  }
-
-
-  /* =======================================================
-     TOP MOBILE UTILITY BAR
-  ======================================================== */
-
-  .header-utility {
-    display:
-      block;
-
-    height:
-      3rem;
-
-    background:
-      #fff;
-
-    border-bottom:
-      1px solid #e8e6e1;
-  }
-
-  .header-utility__inner {
-    width:
-      100%;
-
-    height:
-      100%;
-
-    margin:
-      0;
-
-    padding:
-      0;
-  }
-
-  .header-utility__right {
-    width:
-      100%;
-
-    height:
-      100%;
-
-    display:
-      grid;
-
-    grid-template-columns:
-      1fr
-      1fr
-      1fr;
-
-    gap:
-      0;
-  }
-
-
-  /* =======================================================
-     MOBILE DARK MODE
-  ======================================================== */
-
-  .dark-toggle {
-    width:
-      100%;
-
-    height:
-      100%;
-
-    display:
-      inline-flex;
-
-    align-items:
-      center;
-
-    justify-content:
-      center;
-
-    gap:
-      0.35rem;
-
-    padding:
-      0;
-
-    border-right:
-      1px solid #e8e6e1;
-
-    background:
-      #fff;
-
-    color:
-      #55565a;
-
-    font-size:
-      0.62rem;
-  }
-
-  .dark-toggle__label {
-    display:
-      inline-block;
-  }
-
-  .dark-toggle__icon {
-    width:
-      1rem;
-
-    height:
-      1rem;
-
-    font-size:
-      0.58rem;
-  }
-
-  .dark-toggle__switch {
-    width:
-      2.25rem;
-
-    height:
-      1.15rem;
-
-    padding:
-      2px;
-  }
-
-  .dark-toggle__switch span {
-    width:
-      0.9rem;
-
-    height:
-      0.9rem;
-  }
-
-  .dark-toggle[aria-pressed="true"]
-  .dark-toggle__switch span {
-    transform:
-      translateX(1.05rem);
-  }
-
-
-  /* =======================================================
-     MOBILE GLOBAL SITE
-  ======================================================== */
-
-  .global-site {
-    width:
-      100%;
-
-    height:
-      100%;
-
-    display:
-      inline-flex;
-
-    align-items:
-      center;
-
-    justify-content:
-      center;
-
-    gap:
-      0.45rem;
-
-    padding:
-      0;
-
-    border:
-      0;
-
-    border-right:
-      1px solid #e8e6e1;
-
-    background:
-      #fff;
-
-    color:
-      #55565a;
-
-    font-size:
-      0.68rem;
-  }
-
-  .global-site__globe svg {
-    width:
-      1.25rem;
-
-    height:
-      1.25rem;
-  }
-
-  .global-site__text {
-    display:
-      none;
-  }
-
-  .global-site__chevron {
-    width:
-      0.7rem;
-
-    height:
-      0.7rem;
-  }
-
-
-  /* =======================================================
-     MOBILE CONTACT BUTTON
-  ======================================================== */
-
-  .header-contact {
-    width:
-      100%;
-
-    height:
-      100%;
-
-    display:
-      flex;
-
-    align-items:
-      center;
-
-    justify-content:
-      center;
-
-    padding:
-      0;
-
-    background:
-      #087db7;
-
-    color:
-      transparent;
-
-    font-size:
-      0;
-  }
-
-  .header-contact::before {
-    content:
-      "";
-
-    width:
-      1.45rem;
-
-    height:
-      1rem;
-
-    display:
-      block;
-
-    border:
-      1.5px solid #fff;
-
-    border-radius:
-      1px;
-
-    background:
-      linear-gradient(
-        135deg,
-        transparent 47%,
-        #fff 48%,
-        #fff 52%,
-        transparent 53%
-      )
-      left top / 50% 100% no-repeat,
-
-      linear-gradient(
-        225deg,
-        transparent 47%,
-        #fff 48%,
-        #fff 52%,
-        transparent 53%
-      )
-      right top / 50% 100% no-repeat;
-  }
-
-
-  /* =======================================================
-     MOBILE BRAND BAR
-  ======================================================== */
-
-  .header-main {
-    height:
-      4.25rem;
-
-    background:
-      #fff;
-
-    border-bottom:
-      1px solid #e8e6e1;
-  }
-
-  .header-main__inner {
-    width:
-      100%;
-
-    height:
-      100%;
-
-    margin:
-      0;
-
-    padding:
-      0 1.25rem;
-
-    display:
-      flex;
-
-    align-items:
-      center;
-
-    justify-content:
-      space-between;
-
-    gap:
-      0.5rem;
-  }
-
-
-  /* =======================================================
-     MOBILE LOGO
-  ======================================================== */
-
-  .site-logo {
-    width:
-      7.7rem;
-
-    flex-shrink:
-      0;
-  }
-
-
-  /* =======================================================
-     MOBILE SEARCH
-  ======================================================== */
-
-  .header-main__inner .header-search {
-    width:
-      2.6rem;
-
-    height:
-      2.6rem;
-
-    margin-left:
-      auto;
-
-    display:
-      grid;
-
-    place-items:
-      center;
-
-    padding:
-      0;
-
-    border:
-      0;
-
-    background:
-      transparent;
-
-    color:
-      var(--navy);
-
-    cursor:
-      pointer;
-  }
-
-  .header-main__inner
-  .header-search__text {
-    display:
-      none;
-  }
-
-  .header-search__icon {
-    display:
-      grid;
-
-    place-items:
-      center;
-  }
-
-  .header-search__icon svg {
-    width:
-      1.4rem;
-
-    height:
-      1.4rem;
-  }
-
-
-  /* =======================================================
-     MOBILE HAMBURGER
-  ======================================================== */
-
-  .mobile-menu-toggle {
-    position:
-      relative;
-
-    display:
-      block;
-
-    width:
-      2.75rem;
-
-    height:
-      2.75rem;
-
-    flex-shrink:
-      0;
-
-    padding:
-      0;
-
-    background:
-      transparent;
-
-    cursor:
-      pointer;
-  }
-
-  .mobile-menu-toggle span {
-    position:
-      absolute;
-
-    left:
-      0.45rem;
-
-    width:
-      1.85rem;
-
-    height:
-      1.5px;
-
-    background:
-      var(--navy-deep);
-
-    transition:
-      top 400ms var(--ease-out),
-      transform 400ms var(--ease-out);
-  }
-
-  .mobile-menu-toggle span:first-child {
-    top:
-      1rem;
-  }
-
-  .mobile-menu-toggle span:last-child {
-    top:
-      1.65rem;
-  }
-
-  .mobile-menu-toggle[aria-expanded="true"]
-  span:first-child {
-    top:
-      1.3rem;
-
-    transform:
-      rotate(45deg);
-  }
-
-  .mobile-menu-toggle[aria-expanded="true"]
-  span:last-child {
-    top:
-      1.3rem;
-
-    transform:
-      rotate(-45deg);
-  }
-
-
-  /* =======================================================
-     DESKTOP NAV HIDDEN
-  ======================================================== */
-
-  .main-nav {
-    display:
-      none;
-  }
-
-
-  /* =======================================================
-     MOBILE COUNTRY MENU
-  ======================================================== */
-
-  .country-menu {
-    top:
-      3rem;
-
-    left:
-      0;
-
-    right:
-      0;
-
-    width:
-      100%;
-
-    padding:
-      1.25rem;
-
-    border-left:
-      0;
-
-    border-right:
-      0;
-  }
-
-
-  /* =======================================================
-     MOBILE FULL MENU
-  ======================================================== */
-
-  .mobile-nav {
-    top:
-      7.25rem;
-
-    height:
-      calc(
-        100dvh - 7.25rem
-      );
-
-    transform:
-      translateY(-1rem);
-  }
-
-  .mobile-nav.is-open {
-    transform:
-      translateY(0);
-  }
-
-  .mobile-nav__inner {
-    padding:
-      1.25rem
-      1.25rem
-      2rem;
-  }
-
-  .mobile-nav__header {
-    display:
-      none;
-  }
-
-  .mobile-nav__links {
-    justify-content:
-      flex-start;
-
-    padding-top:
-      1rem;
-  }
-
-  .mobile-nav__links a {
-    padding:
-      0.9rem 0;
-
-    font-size:
-      clamp(
-        1.5rem,
-        6vw,
-        2.3rem
-      );
-  }
-
-
-  /* =======================================================
-     MOBILE HERO
-  ======================================================== */
-
-  .hero {
-    min-height:
-      0;
-
-    height:
-      auto;
-
-    --hero-controls-height:
-      5.25rem;
-  }
-
-  .hero-slides {
-    position:
-      relative;
-
-    min-height:
-      calc(
-        100svh - 7.25rem
-      );
-  }
-
-  .hero-slide {
-    position:
-      absolute;
-
-    inset:
-      0;
-
-    display:
-      flex;
-
-    flex-direction:
-      column;
-
-    min-height:
-      100%;
-  }
-
-
-  /* =======================================================
-     MOBILE HERO IMAGE
-  ======================================================== */
-
-  .hero-slide__media {
-    position:
-      relative;
-
-    inset:
-      auto;
-
-    width:
-      100%;
-
-    height:
-      clamp(
-        17rem,
-        58vw,
-        25rem
-      );
-
-    flex-shrink:
-      0;
-  }
-
-  .hero-slide__media::before {
+  .premium-carousel__overlay {
     background:
       linear-gradient(
         180deg,
-        rgba(28,29,58,0)
-          25%,
-
-        rgba(28,29,58,0.18)
-          55%,
-
-        rgba(28,29,58,0.85)
-          88%,
-
-        rgba(28,29,58,1)
-          100%
+        rgba(12,14,20,0.2) 0%,
+        rgba(12,14,20,0.25) 35%,
+        rgba(12,14,20,0.88) 100%
       );
   }
 
-  .hero-slide__media::after {
-    display:
-      none;
+  .premium-carousel__content {
+    left: 1.5rem;
+    right: 1.5rem;
+    bottom: 5rem;
+
+    width: auto;
   }
 
-
-  /* =======================================================
-     MOBILE HERO CONTENT
-  ======================================================== */
-
-  .hero-slide__body {
-    position:
-      relative;
-
-    width:
-      100%;
-
-    height:
-      auto;
-
-    margin:
-      0;
-
-    padding:
-      0.5rem
-      1.25rem
-      calc(
-        var(--hero-controls-height)
-        + 1.5rem
-      );
-
-    display:
-      block;
-
-    background:
-      var(--navy-deep);
+  .premium-carousel__content h2 {
+    font-size: clamp(2.8rem, 13vw, 5rem);
   }
 
-  .hero-slide__content {
-    max-width:
-      100%;
+  .premium-carousel__content p {
+    max-width: 24rem;
   }
 
+  .premium-carousel__controls {
+    right: 1.5rem;
+    top: auto;
+    bottom: 4.2rem;
 
-  /* Eyebrow */
+    flex-direction: row;
 
-  .hero-eyebrow {
-    margin-bottom:
-      0.9rem;
-
-    font-size:
-      0.62rem;
+    transform: none;
   }
 
-
-  /* Title */
-
-  .hero-title {
-    max-width:
-      9ch;
-
-    font-size:
-      clamp(
-        2.65rem,
-        10vw,
-        4.2rem
-      );
-
-    line-height:
-      0.94;
+  .premium-carousel__controls button {
+    width: 2.75rem;
+    height: 2.75rem;
   }
 
-
-  /* Copy */
-
-  .hero-copy {
-    max-width:
-      34rem;
-
-    margin-top:
-      1.25rem;
-
-    font-size:
-      0.92rem;
-
-    line-height:
-      1.55;
+  .premium-carousel__number {
+    display: none;
   }
-
-
-  /* CTA */
-
-  .hero-cta {
-    min-height:
-      3.1rem;
-
-    margin-top:
-      1.5rem;
-
-    padding:
-      0 1.2rem;
-  }
-
-
-  /* =======================================================
-     MOBILE HERO CONTROLS
-  ======================================================== */
-
-  .hero-controls__inner {
-    width:
-      calc(
-        100% - 2rem
-      );
-
-    height:
-      var(--hero-controls-height);
-
-    gap:
-      0.6rem;
-  }
-
-  .hero-progress {
-    gap:
-      0.55rem;
-  }
-
-  .hero-progress__track {
-    gap:
-      0.25rem;
-  }
-
-  .hero-count {
-    min-width:
-      1.2rem;
-
-    font-size:
-      0.65rem;
-  }
-
-  .hero-buttons {
-    gap:
-      0.3rem;
-  }
-
-  .hero-btn {
-    width:
-      2.55rem;
-
-    height:
-      2.55rem;
-  }
-
-
-  /* Search */
-
-  .search-overlay__inner {
-    padding-top:
-      6rem;
-  }
-
-}
-
-
-/* =========================================================
-   21 — SMALL MOBILE
-========================================================= */
-
-@media (max-width: 30rem) {
-
-  .header-main__inner {
-    padding:
-      0 1rem;
-  }
-
-  .site-logo {
-    width:
-      7.2rem;
-  }
-
-  .dark-toggle {
-    gap:
-      0.25rem;
-
-    font-size:
-      0.58rem;
-  }
-
-  .dark-toggle__switch {
-    width:
-      2rem;
-  }
-
-  .dark-toggle[aria-pressed="true"]
-  .dark-toggle__switch span {
-    transform:
-      translateX(0.8rem);
-  }
-
-  .hero-slide__media {
-    height:
-      16rem;
-  }
-
-  .hero-title {
-    font-size:
-      2.65rem;
-  }
-
-  .hero-copy {
-    font-size:
-      0.88rem;
-  }
-
-  .hero-btn {
-    width:
-      2.4rem;
-
-    height:
-      2.4rem;
-  }
-
-}
-
-
-/* =========================================================
-   22 — REDUCED MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  html {
-    scroll-behavior:
-      auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration:
-      0.01ms !important;
-
-    animation-iteration-count:
-      1 !important;
-
-    transition-duration:
-      0.01ms !important;
-  }
-
-  .hero-slide__media img,
-  .hero-title__line span,
-  .hero-copy,
-  .hero-cta {
-    transform:
-      none !important;
-  }
-
 }
