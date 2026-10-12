@@ -1392,6 +1392,7 @@ span:last-child {
 }
 
 .gham-overview__container {
+  margin-top: 50px;
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   align-items: center;
@@ -1524,7 +1525,7 @@ span:last-child {
   grid-row: 1;
 
   border-radius: 0.55rem;
-  background: #e9eddf;
+  background: #cba563;
   color: var(--overview-deep);
 }
 
@@ -1966,10 +1967,7 @@ span:last-child {
 /* feaured product section starts here */
 
 
-.amandahbg{
-  background-image: url("pics/amandah2.jpg");
-  height: 400px;
-}
+
 
 
 /* =========================================================
@@ -2418,4 +2416,18 @@ span:last-child {
   .gham-brands__link {
     transition: none;
   }
+}
+
+
+
+
+.amandahbg {
+  width: 100%;
+  height: 700px;
+  background-color: #ff00ff;
+  background-image: url("../pics/Amandah3.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
