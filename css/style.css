@@ -1790,9 +1790,17 @@ span:last-child {
   .gham-overview__container {
     grid-template-columns: minmax(0, 1fr);
     gap: 3.5rem;
+    flex-direction: column-reverse;
 
     width: min(760px, calc(100% - 3rem));
   }
+
+  @media (max-width: 767px) {
+  .gham-overview__container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
 
   .gham-overview__visuals {
     width: 100%;
