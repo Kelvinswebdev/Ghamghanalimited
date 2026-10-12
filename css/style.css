@@ -2082,349 +2082,6 @@ span:last-child {
    FEATURED BRAND LAYOUT
 ========================================================= */
 
-.gham-brands__feature {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  align-items: stretch;
-  gap: clamp(2.5rem, 6vw, 6rem);
-
-  padding-top: clamp(2.5rem, 5vw, 4.5rem);
-}
-
-
-/* =========================================================
-   PRODUCT IMAGE
-========================================================= */
-
-.gham-brands__media {
-  position: relative;
-  min-width: 0;
-  aspect-ratio: 1.22 / 1;
-  overflow: hidden;
-
-  background: #f0eee8;
-}
-
-.gham-brands__media img {
-  display: block;
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-  object-position: center;
-
-  transition: transform 900ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-@media (hover: hover) {
-  .gham-brands__media:hover img {
-    transform: scale(1.035);
-  }
-}
-
-.gham-brands__media-label {
-  position: absolute;
-  right: 1.25rem;
-  bottom: 1.25rem;
-  left: 1.25rem;
-
-  color: #fff;
-  font-size: 0.72rem;
-  letter-spacing: 0.025em;
-
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
-}
-
-
-/* =========================================================
-   BRAND DETAILS
-========================================================= */
-
-.gham-brands__details {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  min-width: 0;
-  padding-top: 0.5rem;
-}
-
-.gham-brands__meta {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-
-  width: 100%;
-}
-
-.gham-brands__brand-index {
-  color: var(--brands-gold);
-  font-size: 0.8rem;
-  font-weight: 650;
-  letter-spacing: 0.08em;
-}
-
-.gham-brands__meta-line {
-  width: 2rem;
-  height: 1px;
-  background: var(--brands-line);
-}
-
-.gham-brands__meta-label {
-  color: var(--brands-muted);
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.gham-brands__name {
-  margin: clamp(2rem, 4vw, 3.5rem) 0 0;
-
-  color: var(--brands-navy);
-  font-size: clamp(3.5rem, 6vw, 6rem);
-  font-weight: 500;
-  line-height: 0.95;
-  letter-spacing: -0.07em;
-}
-
-.gham-brands__statement {
-  margin: 1.4rem 0 0;
-
-  color: var(--brands-deep);
-  font-size: clamp(1.15rem, 1.8vw, 1.55rem);
-  font-weight: 450;
-  line-height: 1.4;
-  letter-spacing: -0.025em;
-}
-
-.gham-brands__description {
-  max-width: 430px;
-  margin: 1.1rem 0 0;
-
-  color: #555961;
-  font-size: 0.94rem;
-  line-height: 1.8;
-}
-
-
-/* =========================================================
-   BRAND LINK
-========================================================= */
-
-.gham-brands__link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-
-  min-height: 3.1rem;
-  margin-top: 2rem;
-  padding: 0.8rem 1.1rem;
-
-  border: 1px solid var(--brands-navy);
-
-  background: var(--brands-navy);
-  color: #fff;
-
-  font-size: 0.76rem;
-  font-weight: 550;
-  text-decoration: none;
-
-  transition:
-    gap 250ms ease,
-    background 250ms ease,
-    border-color 250ms ease,
-    color 250ms ease;
-}
-
-.gham-brands__link:hover {
-  gap: 1.9rem;
-
-  border-color: var(--brands-gold);
-  background: var(--brands-gold);
-  color: var(--brands-deep);
-}
-
-.gham-brands__arrow {
-  font-size: 1.15rem;
-  line-height: 1;
-}
-
-.gham-brands__link:focus-visible {
-  outline: 2px solid var(--brands-gold);
-  outline-offset: 4px;
-}
-
-
-/* =========================================================
-   BOTTOM BRAND FOOTER
-========================================================= */
-
-.gham-brands__footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-
-  width: 100%;
-  margin-top: auto;
-  padding-top: 1.25rem;
-
-  border-top: 1px solid var(--brands-line);
-  color: var(--brands-muted);
-
-  font-size: 0.67rem;
-  letter-spacing: 0.035em;
-}
-
-.gham-brands__details > .gham-brands__footer {
-  margin-top: clamp(2.5rem, 5vw, 4rem);
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 900px) {
-  .gham-brands__header {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1.5rem;
-  }
-
-  .gham-brands__intro {
-    justify-self: start;
-    max-width: 600px;
-  }
-
-  .gham-brands__feature {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
-    gap: 2rem;
-  }
-
-  .gham-brands__media {
-    aspect-ratio: 0.85 / 1;
-  }
-
-  .gham-brands__name {
-    font-size: clamp(3rem, 6vw, 4.5rem);
-  }
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-  .gham-brands {
-    padding: 4.25rem 0;
-  }
-
-  .gham-brands__container {
-    width: calc(100% - 2.5rem);
-  }
-
-  .gham-brands__header {
-    gap: 1.25rem;
-    padding-bottom: 2rem;
-  }
-
-  .gham-brands__eyebrow {
-    margin-bottom: 1.2rem;
-    font-size: 0.66rem;
-  }
-
-  .gham-brands__title {
-    font-size: clamp(2.75rem, 10vw, 4.2rem);
-    line-height: 1.02;
-  }
-
-  .gham-brands__intro p {
-    font-size: 0.92rem;
-    line-height: 1.75;
-  }
-
-  .gham-brands__feature {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1.75rem;
-
-    padding-top: 2rem;
-  }
-
-  .gham-brands__media {
-    aspect-ratio: 1.05 / 1;
-  }
-
-  .gham-brands__media-label {
-    right: 0.9rem;
-    bottom: 0.9rem;
-    left: 0.9rem;
-    font-size: 0.67rem;
-  }
-
-  .gham-brands__details {
-    padding-top: 0;
-  }
-
-  .gham-brands__name {
-    margin-top: 1.7rem;
-    font-size: clamp(3.4rem, 14vw, 5rem);
-  }
-
-  .gham-brands__statement {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-  }
-
-  .gham-brands__description {
-    margin-top: 0.8rem;
-    font-size: 0.9rem;
-    line-height: 1.75;
-  }
-
-  .gham-brands__link {
-    margin-top: 1.5rem;
-  }
-
-  .gham-brands__details > .gham-brands__footer {
-    margin-top: 2.5rem;
-  }
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 360px) {
-  .gham-brands__container {
-    width: calc(100% - 2rem);
-  }
-
-  .gham-brands__title {
-    font-size: 2.55rem;
-  }
-
-  .gham-brands__name {
-    font-size: 3.1rem;
-  }
-
-  .gham-brands__footer {
-    font-size: 0.61rem;
-  }
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-  .gham-brands__media img,
-  .gham-brands__link {
-    transition: none;
-  }
-}
 
 
 
@@ -2438,4 +2095,144 @@ span:last-child {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+
+
+/* =========================================================
+   Mission & Vision
+========================================================= */
+
+
+.gham-purpose {
+  padding: 80px 5%;
+  background: #fff;
+  font-family: var(--font-sans);
+}
+
+.gham-purpose__top {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 60px;
+  margin-bottom: 45px;
+}
+
+.gham-purpose__top h2 {
+  max-width: 580px;
+  margin: 0;
+  color: #2c2e56;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.gham-purpose__icon {
+  color: #caa562;
+  margin-right: 12px;
+}
+
+.gham-purpose__top > p {
+  margin: 5px 0 0;
+  color: #6b7076;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.gham-purpose__bottom {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 20px;
+}
+
+.gham-purpose__cards {
+  display: grid;
+  gap: 12px;
+}
+
+.gham-purpose__card {
+  padding: 24px;
+  border: 1px solid #e5e2db;
+  border-radius: 8px;
+}
+
+.gham-purpose__card--active {
+  background: #2c2e56;
+  color: #fff;
+}
+
+.gham-purpose__card h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.gham-purpose__card p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.gham-purpose__card:not(.gham-purpose__card--active) p {
+  color: #6b7076;
+}
+
+.gham-purpose__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width: 767px) {
+  .gham-purpose {
+    padding: 55px 5%;
+  }
+
+  .gham-purpose__top,
+  .gham-purpose__bottom {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .gham-purpose__top {
+    margin-bottom: 30px;
+  }
+
+  .gham-purpose__image img {
+    min-height: 250px;
+    max-height: 350px;
+  }
+}
+/* Scroll reveal */
+.gham-purpose__top,
+.gham-purpose__card,
+.gham-purpose__image {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.gham-purpose .is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gham-purpose__card:nth-child(2) {
+  transition-delay: 150ms;
+}
+
+.gham-purpose__image {
+  transition-delay: 250ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gham-purpose__top,
+  .gham-purpose__card,
+  .gham-purpose__image {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
