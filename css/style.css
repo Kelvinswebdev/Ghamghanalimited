@@ -2097,6 +2097,16 @@ span:last-child {
   background-attachment: fixed;
 }
 
+@media (max-width: 767px) {
+  .amandahbg {
+    background-size: contain;
+    height: 250px;
+    background-color: white;
+  }
+
+
+}
+
 
 
 /* =========================================================
