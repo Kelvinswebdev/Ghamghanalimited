@@ -2681,6 +2681,268 @@ span:last-child {
 
 
 
+
+/* ##################################################### Gham sustainability */
+
+
+.gham-sustainability {
+  padding: 80px 5%;
+  background: #fbfaf7;
+  color: #2c2e56;
+}
+
+.gham-sustainability__container {
+  max-width: 1450px;
+  margin: auto;
+}
+
+.gham-sustainability__heading {
+  margin: 0 0 45px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.gham-sustainability__layout {
+  display: grid;
+  grid-template-columns: 1.8fr 1.2fr;
+  gap: 20px;
+  min-height: 540px;
+}
+
+/* Large image */
+.gham-sustainability__feature {
+  position: relative;
+  min-height: 540px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #e5e2db;
+}
+
+.gham-sustainability__feature > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 800ms ease;
+}
+
+.gham-sustainability__feature:hover > img {
+  transform: scale(1.04);
+}
+
+.gham-sustainability__feature::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 35%, #16181b55);
+  pointer-events: none;
+}
+
+.gham-sustainability__feature-card {
+  position: absolute;
+  z-index: 1;
+  right: 25px;
+  bottom: 25px;
+  left: 25px;
+  padding: 28px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.gham-sustainability__feature-card > span {
+  color: #8c6a2b;
+  font-size: 14px;
+}
+
+.gham-sustainability__feature-card h3 {
+  margin: 12px 0;
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-weight: 400;
+}
+
+.gham-sustainability__feature-card p,
+.gham-sustainability__details p {
+  color: #6b7076;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.gham-sustainability__feature-card a,
+.gham-sustainability__details a {
+  color: #8c6a2b;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+/* Expanding cards */
+.gham-sustainability__cards {
+  display: flex;
+  gap: 14px;
+  min-width: 0;
+}
+
+.gham-sustainability__card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #2c2e56;
+  color: #fff;
+  transition: flex 650ms cubic-bezier(.22, 1, .36, 1),
+              background 300ms ease;
+}
+
+.gham-sustainability__card.is-active {
+  flex: 2.5;
+  background: #1c1d3a;
+}
+
+.gham-sustainability__trigger {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+  width: 100%;
+  min-height: 280px;
+  padding: 25px 18px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.gham-sustainability__number {
+  color: #caa562;
+  font-size: 14px;
+}
+
+.gham-sustainability__trigger h3 {
+  margin: 0;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.gham-sustainability__arrow {
+  margin-top: auto;
+  color: #caa562;
+  font-size: 22px;
+  transition: transform 350ms ease;
+}
+
+.gham-sustainability__card.is-active
+.gham-sustainability__arrow {
+  transform: rotate(45deg);
+}
+
+.gham-sustainability__details {
+  display: grid;
+  grid-template-rows: 0fr;
+  padding: 0 18px;
+  opacity: 0;
+  transition: opacity 350ms ease, padding 350ms ease;
+}
+
+.gham-sustainability__details p {
+  color: #e0e0e9;
+}
+
+.gham-sustainability__card.is-active
+.gham-sustainability__details {
+  padding-bottom: 25px;
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .gham-sustainability__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .gham-sustainability__feature {
+    min-height: 450px;
+  }
+
+  .gham-sustainability__cards {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .gham-sustainability {
+    padding: 55px 5%;
+  }
+
+  .gham-sustainability__heading {
+    margin-bottom: 28px;
+  }
+
+  .gham-sustainability__feature {
+    min-height: 400px;
+  }
+
+  .gham-sustainability__feature-card {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    padding: 20px;
+  }
+
+  .gham-sustainability__cards {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .gham-sustainability__card,
+  .gham-sustainability__card.is-active {
+    flex: none;
+  }
+
+  .gham-sustainability__trigger {
+    flex: none;
+    flex-direction: row;
+    align-items: center;
+    min-height: 0;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .gham-sustainability__trigger h3 {
+    flex: 1;
+    font-size: 17px;
+  }
+
+  .gham-sustainability__arrow {
+    margin-top: 0;
+  }
+
+  .gham-sustainability__details {
+    display: none;
+    padding: 0 20px;
+  }
+
+  .gham-sustainability__card.is-active
+  .gham-sustainability__details {
+    display: block;
+    padding-bottom: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gham-sustainability * {
+    transition: none !important;
+  }
+}
+
+
+
 /* #####################################################  Gham News Section*/
 
 
