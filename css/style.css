@@ -2090,11 +2090,45 @@ span:last-child {
   width: 100%;
   height: 700px;
   background-color: #ff00ff;
-  background-image: url("../pics/Amandah3.png");
+  background-image:linear-gradient(to left,rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("../pics/Amandah3.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+.amandahbgcontent{
+  display: flex;
+  justify-content: space-between;
+  max-width: 1100px;
+  align-items: center;
+  height: 700px;
+  margin: 0 auto;
+}
+
+.amandahbgcontentleft{
+  width: 50%;
+}
+
+.amandahbgcontentleft h2{
+  font-size: 50px;
+  font-family: montserrat;
+  line-height: 1.2;
+  margin: 0;
+  color: white;
+  font-weight: lighter;
+}
+
+.amandahbgcontentleft p{
+    font-family: Poppins;
+    font-size: 13px;
+
+  color: white;
+
+}
+
+.amandahbgcontentright{
+  width: 50%;
 }
 
 @media (max-width: 767px) {
@@ -2115,6 +2149,7 @@ span:last-child {
 
 
 .gham-purpose {
+  padding-top: 50px;
   padding: 80px 5%;
   background: #fff;
   font-family: var(--font-sans);
@@ -2129,9 +2164,10 @@ span:last-child {
 
 .gham-purpose__top h2 {
   max-width: 580px;
+  font-family: montserrat;
   margin: 0;
   color: #2c2e56;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: 24px;
   font-weight: 400;
   line-height: 1.15;
 }
@@ -2264,14 +2300,15 @@ span:last-child {
   gap: 40px;
   align-items: stretch;
   max-width: 1400px;
-  margin: auto;
+  margin-top: 100px;
 }
 
 .gham-capabilities__content h2 {
   margin: 10px 0 18px;
+  font-family: montserrat;
   color: #2c2e56;
-  font-size: clamp(2rem, 3vw, 2.8rem);
-  font-weight: 400;
+  font-size: 44px;
+  font-weight: 300;
   line-height: 1.2;
 }
 
@@ -2350,6 +2387,7 @@ span:last-child {
 
 .gham-numbers h2 {
   max-width: 1500px;
+    font-family: montserrat;
   margin: 0 auto 65px;
   padding: 0 5%;
   font-size: clamp(2.2rem, 4vw, 3.5rem);
@@ -2520,6 +2558,7 @@ span:last-child {
 .gham-faq h2,
 .gham-enquiry-form h2 {
   margin: 0 0 25px;
+  
   color: #2c2e56;
   font-size: clamp(1.6rem, 2.5vw, 2.2rem);
   font-weight: 400;
@@ -2688,256 +2727,122 @@ span:last-child {
 .gham-sustainability {
   padding: 80px 5%;
   background: #fbfaf7;
-  color: #2c2e56;
 }
 
 .gham-sustainability__container {
   max-width: 1450px;
-  margin: auto;
+  margin-top: 100px;
 }
 
 .gham-sustainability__heading {
   margin: 0 0 45px;
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-family: montserrat;
+  color: #2c2e56;
+  padding-bottom: 50px;
+  font-size: 34px;
   font-weight: 400;
-  line-height: 1.2;
 }
 
-.gham-sustainability__layout {
+.gham-sustainability__grid {
   display: grid;
-  grid-template-columns: 1.8fr 1.2fr;
-  gap: 20px;
-  min-height: 540px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 35px 25px;
 }
 
-/* Large image */
-.gham-sustainability__feature {
+.gham-sustainability__card {
   position: relative;
-  min-height: 540px;
+  min-height: 460px;
   overflow: hidden;
   border-radius: 8px;
   background: #e5e2db;
+  transition: transform 350ms ease, box-shadow 350ms ease;
 }
 
-.gham-sustainability__feature > img {
+.gham-sustainability__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 35px #16181b18;
+}
+
+.gham-sustainability__card > img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 800ms ease;
+  transition: transform 700ms ease;
 }
 
-.gham-sustainability__feature:hover > img {
+.gham-sustainability__card:hover > img {
   transform: scale(1.04);
 }
 
-.gham-sustainability__feature::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(transparent 35%, #16181b55);
-  pointer-events: none;
-}
-
-.gham-sustainability__feature-card {
+.gham-sustainability__content {
   position: absolute;
   z-index: 1;
-  right: 25px;
-  bottom: 25px;
   left: 25px;
-  padding: 28px;
-  border-radius: 8px;
+  bottom: 0;
+  width: min(82%, 520px);
+  padding: 25px 28px;
+  border-radius: 8px 8px 0 0;
   background: #fff;
 }
 
-.gham-sustainability__feature-card > span {
+.gham-sustainability__content > span {
   color: #8c6a2b;
   font-size: 14px;
 }
 
-.gham-sustainability__feature-card h3 {
+.gham-sustainability__content h3 {
   margin: 12px 0;
-  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  color: #2c2e56;
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
   font-weight: 400;
+  line-height: 1.25;
 }
 
-.gham-sustainability__feature-card p,
-.gham-sustainability__details p {
+.gham-sustainability__content p {
+  margin: 0 0 18px;
   color: #6b7076;
   font-size: 14px;
   line-height: 1.8;
 }
 
-.gham-sustainability__feature-card a,
-.gham-sustainability__details a {
+.gham-sustainability__content a {
   color: #8c6a2b;
   font-size: 13px;
   text-decoration: none;
 }
 
-/* Expanding cards */
-.gham-sustainability__cards {
-  display: flex;
-  gap: 14px;
-  min-width: 0;
+.gham-sustainability__content a:hover {
+  color: #2c2e56;
 }
 
-.gham-sustainability__card {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  min-width: 0;
-  overflow: hidden;
-  border-radius: 8px;
-  background: #2c2e56;
-  color: #fff;
-  transition: flex 650ms cubic-bezier(.22, 1, .36, 1),
-              background 300ms ease;
-}
-
-.gham-sustainability__card.is-active {
-  flex: 2.5;
-  background: #1c1d3a;
-}
-
-.gham-sustainability__trigger {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 22px;
-  width: 100%;
-  min-height: 280px;
-  padding: 25px 18px;
-  border: 0;
-  background: transparent;
-  color: inherit;
-  text-align: left;
-  cursor: pointer;
-}
-
-.gham-sustainability__number {
-  color: #caa562;
-  font-size: 14px;
-}
-
-.gham-sustainability__trigger h3 {
-  margin: 0;
-  font-size: clamp(1rem, 1.5vw, 1.5rem);
-  font-weight: 400;
-  line-height: 1.4;
-  overflow-wrap: anywhere;
-}
-
-.gham-sustainability__arrow {
-  margin-top: auto;
-  color: #caa562;
-  font-size: 22px;
-  transition: transform 350ms ease;
-}
-
-.gham-sustainability__card.is-active
-.gham-sustainability__arrow {
-  transform: rotate(45deg);
-}
-
-.gham-sustainability__details {
-  display: grid;
-  grid-template-rows: 0fr;
-  padding: 0 18px;
-  opacity: 0;
-  transition: opacity 350ms ease, padding 350ms ease;
-}
-
-.gham-sustainability__details p {
-  color: #e0e0e9;
-}
-
-.gham-sustainability__card.is-active
-.gham-sustainability__details {
-  padding-bottom: 25px;
-  opacity: 1;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .gham-sustainability__layout {
-    grid-template-columns: 1fr;
-  }
-
-  .gham-sustainability__feature {
-    min-height: 450px;
-  }
-
-  .gham-sustainability__cards {
-    min-height: 300px;
-  }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .gham-sustainability {
     padding: 55px 5%;
   }
 
-  .gham-sustainability__heading {
-    margin-bottom: 28px;
+  .gham-sustainability__grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
   }
 
-  .gham-sustainability__feature {
-    min-height: 400px;
+  .gham-sustainability__card {
+    min-height: 420px;
   }
 
-  .gham-sustainability__feature-card {
-    right: 12px;
-    bottom: 12px;
+  .gham-sustainability__content {
     left: 12px;
-    padding: 20px;
-  }
-
-  .gham-sustainability__cards {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .gham-sustainability__card,
-  .gham-sustainability__card.is-active {
-    flex: none;
-  }
-
-  .gham-sustainability__trigger {
-    flex: none;
-    flex-direction: row;
-    align-items: center;
-    min-height: 0;
-    gap: 15px;
-    padding: 20px;
-  }
-
-  .gham-sustainability__trigger h3 {
-    flex: 1;
-    font-size: 17px;
-  }
-
-  .gham-sustainability__arrow {
-    margin-top: 0;
-  }
-
-  .gham-sustainability__details {
-    display: none;
-    padding: 0 20px;
-  }
-
-  .gham-sustainability__card.is-active
-  .gham-sustainability__details {
-    display: block;
-    padding-bottom: 20px;
+    width: calc(100% - 24px);
+    box-sizing: border-box;
+    padding: 22px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .gham-sustainability * {
-    transition: none !important;
+  .gham-sustainability__card,
+  .gham-sustainability__card > img {
+    transition: none;
   }
 }
 
@@ -2953,7 +2858,7 @@ span:last-child {
 
 .gham-news__container {
   max-width: 1400px;
-  margin: auto;
+  margin-top: 100px;
 }
 
 .gham-news__header {
@@ -2967,7 +2872,8 @@ span:last-child {
 .gham-news__header h2 {
   margin: 0;
   color: #2c2e56;
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-family: montserrat;
+  font-size: 34px;
   font-weight: 400;
   line-height: 1.35;
 }
@@ -3140,8 +3046,8 @@ span:last-child {
 .gham-footer {
   padding: 100px 8% 0;
   border-top: 3px solid #2c2e56;
-  background: #212121;
-  color: #f5f5f8;
+  background: #010139;
+  color: #010135;
 }
 
 .gham-footer__main {
@@ -3308,5 +3214,176 @@ span:last-child {
     align-items: flex-start;
     flex-direction: column;
     gap: 12px;
+  }
+}
+
+
+
+/* ####################################################### Gham Career */
+
+
+.gham-careers {
+  display: grid;
+  grid-template-columns: 0.86fr 1.14fr;
+  min-height: 470px;
+
+  background: #1c1d3a;
+  color: #fff;
+}
+
+.gham-careers__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 60px clamp(28px, 5vw, 80px);
+}
+
+.gham-careers__eyebrow {
+  margin-bottom: 22px;
+  color: #caa562;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+}
+
+.gham-careers__content h2 {
+  max-width: 360px;
+    font-family: montserrat;
+
+  margin: 0 0 18px;
+  font-size: clamp(27px, 2.5vw, 35px);
+  font-weight: 400;
+  line-height: 1.22;
+  letter-spacing: -0.7px;
+}
+
+.gham-careers__description {
+  max-width: 390px;
+  margin: 0;
+  color: #d5d5df;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.gham-careers__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 22px;
+  margin-top: 32px;
+}
+
+.gham-careers__primary,
+.gham-careers__secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.gham-careers__primary {
+  padding: 13px 17px;
+  background: #caa562;
+  color: #1c1d3a;
+  transition: background 200ms ease;
+}
+
+.gham-careers__primary:hover {
+  background: #dfc18b;
+}
+
+.gham-careers__secondary {
+  color: #fff;
+}
+
+.gham-careers__secondary:hover {
+  color: #caa562;
+}
+
+.gham-careers__visual {
+  position: relative;
+  min-height: 470px;
+  overflow: hidden;
+  background: #e5e2db;
+}
+
+.gham-careers__visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+.gham-careers__visual::after {
+  content: "";
+  position: absolute;
+  inset: 50% 0 0;
+  background: linear-gradient(transparent, #16181b55);
+  pointer-events: none;
+}
+
+.gham-careers__image-caption {
+  position: absolute;
+  z-index: 1;
+  right: 28px;
+  bottom: 25px;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+/* Tablet */
+@media (max-width: 850px) {
+  .gham-careers {
+    grid-template-columns: 1fr 1fr;
+    min-height: 420px;
+  }
+
+  .gham-careers__content {
+    padding: 40px 28px;
+  }
+
+  .gham-careers__visual {
+    min-height: 420px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .gham-careers {
+    grid-template-columns: 1fr;
+    margin: 0;
+  }
+
+  .gham-careers__content {
+    padding: 45px 7%;
+  }
+
+  .gham-careers__content h2 {
+    font-size: 29px;
+  }
+
+  .gham-careers__description {
+    font-size: 14px;
+  }
+
+  .gham-careers__links {
+    gap: 18px;
+    margin-top: 25px;
+  }
+
+  .gham-careers__visual {
+    min-height: 300px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gham-careers__primary {
+    transition: none;
   }
 }
