@@ -194,8 +194,7 @@ ol {
 
   background: var(--white);
 
-  border-bottom:
-    1px solid var(--line);
+
 }
 
 .header-utility__inner {
@@ -443,8 +442,7 @@ ol {
 }
 
 .site-logo img {
-
-
+margin-bottom:20px ;
   height: auto;
 }
 
