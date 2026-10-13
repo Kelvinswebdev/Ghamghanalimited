@@ -317,7 +317,7 @@ ol {
 
   gap: 0.65rem;
 
-  padding-inline: 1.25rem;
+  padding-inline: 40px ;
 
   background: #f7f6f3;
 
@@ -924,6 +924,7 @@ span:last-child {
 
 .mobile-nav {
   position: fixed;
+  padding: 30px;
 
   inset: 0;
 
@@ -980,6 +981,8 @@ span:last-child {
 
 .mobile-nav__logo {
   width: 8rem;
+  padding: 20px;
+  margin-bottom: 20px;
 
   filter:
     brightness(0)
