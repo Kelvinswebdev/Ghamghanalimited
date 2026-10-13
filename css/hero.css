@@ -113,14 +113,7 @@
   position: absolute;
   inset: 0;
 
-  background:
-    linear-gradient(
-      90deg,
-      rgba(12, 14, 20, 0.82) 0%,
-      rgba(12, 14, 20, 0.55) 35%,
-      rgba(12, 14, 20, 0.12) 75%,
-      rgba(12, 14, 20, 0.18) 100%
-    );
+  background: linear-gradient(to right,rgba(0, 14, 54, 1),rgba(0,0,0,0.3));                
 
   pointer-events: none;
 }

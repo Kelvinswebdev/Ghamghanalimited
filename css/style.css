@@ -2326,3 +2326,355 @@ span:last-child {
     max-height: 420px;
   }
 }
+
+
+
+/* ############################################################## */
+
+
+/* ============================
+   GHAM IN NUMBERS — MARQUEE
+============================ */
+
+.gham-numbers {
+  padding: 75px 0 55px;
+  overflow: hidden;
+  background: #1e2986;
+  color: #fff;
+}
+
+.gham-numbers__container {
+  width: 100%;
+  margin: auto;
+}
+
+.gham-numbers h2 {
+  max-width: 1500px;
+  margin: 0 auto 65px;
+  padding: 0 5%;
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 400;
+}
+
+/* Moving track */
+.gham-numbers__grid {
+  display: flex;
+  width: max-content;
+  gap: 35px;
+  animation: gham-marquee 35s linear infinite;
+  will-change: transform;
+}
+
+/* Individual items */
+.gham-numbers__item {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex: 0 0 450px;
+  min-width: 0;
+}
+
+.gham-numbers__item img {
+  display: block;
+  width: 125px;
+  height: 125px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.gham-numbers__item p {
+  margin: 0 0 12px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.gham-numbers__item h3 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.3vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+/* Continuous movement */
+@keyframes gham-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause when hovered */
+.gham-numbers:hover .gham-numbers__grid {
+  animation-play-state: paused;
+}
+
+/* Bottom link */
+.gham-numbers__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  margin: 70px 5% 0;
+  padding: 15px 22px;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  color: #fff;
+  text-decoration: none;
+  transition: background 250ms ease, color 250ms ease;
+}
+
+.gham-numbers__link:hover {
+  background: #fff;
+  color: #087db5;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .gham-numbers h2 {
+    margin-bottom: 45px;
+  }
+
+  .gham-numbers__item {
+    flex-basis: 380px;
+    gap: 18px;
+  }
+
+  .gham-numbers__item img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .gham-numbers__link {
+    margin-top: 45px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .gham-numbers {
+    padding: 50px 0 40px;
+  }
+
+  .gham-numbers h2 {
+    margin-bottom: 35px;
+  }
+
+  .gham-numbers__grid {
+    gap: 25px;
+    animation-duration: 28s;
+  }
+
+  .gham-numbers__item {
+    flex-basis: 310px;
+    gap: 15px;
+  }
+
+  .gham-numbers__item img {
+    width: 85px;
+    height: 85px;
+  }
+
+  .gham-numbers__item p {
+    font-size: 13px;
+  }
+
+  .gham-numbers__item h3 {
+    font-size: 1.5rem;
+  }
+
+  .gham-numbers__link {
+    margin-top: 35px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .gham-numbers__grid {
+    animation: none;
+    transform: none;
+  }
+}
+
+
+
+/* ###################################################### Gham Enquiries */
+
+
+.gham-enquiries {
+  padding: 80px 5%;
+  background: #fbfaf7;
+}
+
+.gham-enquiries__container {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 35px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.gham-faq h2,
+.gham-enquiry-form h2 {
+  margin: 0 0 25px;
+  color: #2c2e56;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.gham-faq__icon {
+  margin-right: 8px;
+  color: #caa562;
+}
+
+.gham-faq__list {
+  display: grid;
+  gap: 12px;
+}
+
+.gham-faq__item {
+  border: 1px solid #e5e2db;
+  background: #fff;
+}
+
+.gham-faq__item summary {
+  position: relative;
+  padding: 22px 45px 22px 20px;
+  color: #2c2e56;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  cursor: pointer;
+  list-style: none;
+}
+
+.gham-faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.gham-faq__item summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  color: #caa562;
+  font-size: 22px;
+  font-weight: 400;
+  transform: translateY(-50%);
+}
+
+.gham-faq__item[open] summary::after {
+  content: "−";
+}
+
+.gham-faq__item[open] {
+  border-left: 3px solid #caa562;
+  box-shadow: 0 5px 20px #16181b0d;
+}
+
+.gham-faq__item p {
+  margin: 0;
+  padding: 0 20px 22px;
+  color: #6b7076;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.gham-enquiry-form {
+  padding: 35px;
+  background: #f0f1f3;
+}
+
+.gham-enquiry-form h2 {
+  margin-bottom: 10px;
+}
+
+.gham-enquiry-form__intro {
+  margin: 0 0 22px;
+  color: #6b7076;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.gham-enquiry-form form {
+  display: grid;
+  gap: 16px;
+}
+
+.gham-enquiry-form input,
+.gham-enquiry-form select,
+.gham-enquiry-form textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #dedfe3;
+  border-radius: 6px;
+  outline: none;
+  background: #fff;
+  color: #2c2e56;
+  font: inherit;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+
+.gham-enquiry-form input,
+.gham-enquiry-form select {
+  min-height: 52px;
+}
+
+.gham-enquiry-form textarea {
+  min-height: 125px;
+  resize: vertical;
+}
+
+.gham-enquiry-form input:focus,
+.gham-enquiry-form select:focus,
+.gham-enquiry-form textarea:focus {
+  border-color: #2c2e56;
+}
+
+.gham-enquiry-form button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  min-height: 50px;
+  padding: 14px 20px;
+  border: 0;
+  border-radius: 4px;
+  background: #2c2e56;
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 200ms ease;
+}
+
+.gham-enquiry-form button:hover {
+  background: #1c1d3a;
+}
+
+@media (max-width: 800px) {
+  .gham-enquiries {
+    padding: 55px 5%;
+  }
+
+  .gham-enquiries__container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .gham-enquiry-form {
+    padding: 25px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gham-enquiry-form button {
+    transition: none;
+  }
+}
